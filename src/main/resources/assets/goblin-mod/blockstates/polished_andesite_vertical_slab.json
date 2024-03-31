@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "goblin-mod:block/polished_andesite_vertical_slab", "uvlock": true },
+    "facing=east":  { "model": "goblin-mod:block/polished_andesite_vertical_slab", "y":  90, "uvlock": true },
+    "facing=south": { "model": "goblin-mod:block/polished_andesite_vertical_slab", "y": 180, "uvlock": true },
+    "facing=west":  { "model": "goblin-mod:block/polished_andesite_vertical_slab", "y": 270, "uvlock": true }
+  }
+}
