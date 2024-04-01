@@ -19,26 +19,8 @@ import static net.fabricmc.fabric.api.registry.VillagerPlantableRegistry.getItem
 public class DemoBlockEntity extends BlockEntity implements ImplementedInventory, SidedInventory {
     public DemoBlockEntity(BlockPos pos, BlockState state){
         super(GoblinMod.DEMO_BLOCK_ENTITY, pos, state);
+
     }
-    // 储存数字的当前值
-    private int number = 7;
-
-    // 序列化方块实体
-    /*@Override
-    public void writeNbt(NbtCompound nbt) {
-        // Save the current value of the number to the tag
-        nbt.putInt("number", number);
-
-        super.writeNbt(nbt);
-    }*/
-
-    // 反序列化方块实体
-    /*@Override
-    public void readNbt(NbtCompound nbt) {
-        super.readNbt(nbt);
-
-        number = nbt.getInt("number");
-    }*/
 
     //将服务器数据同步至客户端
     //对于 1.18 及以上版本，请覆盖 toUpdatePacket 和 toInitialChunkDataNbt
