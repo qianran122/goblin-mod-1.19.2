@@ -28,6 +28,19 @@ public class GoblinMod implements ModInitializer {
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
     public static final Logger LOGGER = LoggerFactory.getLogger("goblin-mod");
+
+	/*
+	 * 使用“entitytesting:cube”作为ID注册我们的实体
+	 *
+	 * 这个实体注册在了 SpawnGroup#CREATURE 类别下，大多数的动物和友好或中立的生物都注册在这个类别下。
+	 * 它有一个 0.75 × 0.75（或12个像素宽，即一个方块的3/4）大小的碰撞体积。
+	 */
+	public static final EntityType<CubeEntity> CUBE = Registry.register(
+			Registry.ENTITY_TYPE,
+			new Identifier("entitytesting", "cube"),
+			FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, CubeEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
+	);
+
 	public static final Item EXAMPLE_ITEM = new Item(new Item.Settings().group(ItemGroup.MISC));
 
 	public static final VerticalSlabBlock POLISHED_ANDESITE_VERTICAL_SLAB = Registry.register(
@@ -70,7 +83,7 @@ public class GoblinMod implements ModInitializer {
 		// 我们在这里使用 registerSimple 因为实体不是 ExtendedScreenHandlerFactory
 		// 而是 NamedScreenHandlerFactory.
 		// 后面的教程中，你将会看到 ExtendedScreenHandlerFactory 能做什么！
-		BOX_SCREEN_HANDLER = ScreenHandlerRegistry.registerSimple(BOX, BoxScreenHandler::new);
+		BOX_SCREEN_HANDLER = ScreenHandlerRegistry.registerExtended(BOX, BoxScreenHandler::new);
 	}
 
 	//注册实体
@@ -88,6 +101,25 @@ public class GoblinMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+
+		/*
+		 * 注册我们方块实体的默认属性。
+		 * 属性是一个生物当前状态的数值，其中有攻击伤害和生命值等。
+		 * 如果实体没有及时注册适当的属性，则游戏将崩溃。
+		 *
+		 * 在1.15中，它是通过重写实体类内部的方法来完成的。
+		 * 大部分的原版实体都有一个静态方法(例如,ZombieEntity#createZombieAttributes)用于初始化它们的属性。
+		 */
+		FabricDefaultAttributeRegistry.register(CUBE, CubeEntity.createMobAttributes());
+
+
+
+
+
+
+
+
+
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
