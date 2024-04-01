@@ -3,7 +3,9 @@ package top.qianran;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -24,6 +26,17 @@ public class GoblinMod implements ModInitializer {
 			new Identifier("goblin-mod", "polished_andesite_vertical_slab"),
 			new VerticalSlabBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_ANDESITE)));
 
+	//注册方块实体
+		public static final Block DEMO_BLOCK = Registry.register(
+				Registry.BLOCK,
+			new Identifier("goblin-mod","demo_block"),
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE))
+		);
+	public static final BlockEntityType<DemoBlockEntity> DEMO_BLOCK_ENTITY = Registry.register(
+			Registry.BLOCK_ENTITY_TYPE,
+			new Identifier("goblin-mod", "demo_block_entity"),
+			BlockEntityType.Builder.create(DemoBlockEntity::new, DEMO_BLOCK).build(null));
+
 	@Override
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
@@ -34,5 +47,7 @@ public class GoblinMod implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("goblin-mod", "example_item"), EXAMPLE_ITEM);
 		Registry.register(Registry.ITEM, new Identifier("goblin-mod", "polished_andesite_vertical_slab"),
 				new BlockItem(POLISHED_ANDESITE_VERTICAL_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+
+
 	}
 }
