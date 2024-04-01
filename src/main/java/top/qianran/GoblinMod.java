@@ -26,9 +26,9 @@ public class GoblinMod implements ModInitializer {
 			new Identifier("goblin-mod", "polished_andesite_vertical_slab"),
 			new VerticalSlabBlock(FabricBlockSettings.copyOf(Blocks.POLISHED_ANDESITE)));
 
-	//注册方块实体
-		public static final Block DEMO_BLOCK = Registry.register(
-				Registry.BLOCK,
+	//注册方块与方块实体
+	public static final Block DEMO_BLOCK = Registry.register(
+			Registry.BLOCK,
 			new Identifier("goblin-mod","demo_block"),
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE))
 		);
@@ -48,6 +48,8 @@ public class GoblinMod implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("goblin-mod", "polished_andesite_vertical_slab"),
 				new BlockItem(POLISHED_ANDESITE_VERTICAL_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
 
-
+		//注册demo_block物品
+		Registry.register(Registry.ITEM, new Identifier("goblin-mod","demo_block"),
+				new BlockItem(DEMO_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
 	}
 }
