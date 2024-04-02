@@ -1,4 +1,4 @@
-package top.qianran.entity;
+package top.qianran.entity.cube;
 
 
 import net.minecraft.client.model.*;
