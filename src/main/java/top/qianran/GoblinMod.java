@@ -4,10 +4,15 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.entity.EntityDimensions;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -16,6 +21,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import top.qianran.entity.CubeEntity;
 
 public class GoblinMod implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
@@ -45,7 +51,7 @@ public class GoblinMod implements ModInitializer {
 	public static final Block BOX_BLOCK;
 	public static final BlockItem BOX_BLOCK_ITEM;
 	public static final BlockEntityType<BoxBlockEntity> BOX_BLOCK_ENTITY;
-	public static final String MOD_ID = "testmod";
+	public static final String MOD_ID = "goblin-mod";
 	// 我们的大型箱子中不同部分的公共id
 	public static final Identifier BOX = new Identifier(MOD_ID, "box_block");
 	static {
@@ -66,6 +72,20 @@ public class GoblinMod implements ModInitializer {
 		// 后面的教程中，你将会看到 ExtendedScreenHandlerFactory 能做什么！
 		BOX_SCREEN_HANDLER = ScreenHandlerRegistry.registerSimple(BOX, BoxScreenHandler::new);
 	}
+
+	//注册实体
+	/*
+	 * 使用“entitytesting:cube”作为ID注册我们的实体
+	 *
+	 * 这个实体注册在了 SpawnGroup#CREATURE 类别下，大多数的动物和友好或中立的生物都注册在这个类别下。
+	 * 它有一个 0.75 × 0.75（或12个像素宽，即一个方块的3/4）大小的碰撞体积。
+	 */
+	public static final EntityType<CubeEntity> CUBE = Registry.register(
+			Registry.ENTITY_TYPE,
+			new Identifier("goblin-mod", "cube"),
+			FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, CubeEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
+	);
+
 	@Override
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
@@ -74,11 +94,23 @@ public class GoblinMod implements ModInitializer {
 
 		LOGGER.info("Hello Fabric world!");
 		Registry.register(Registry.ITEM, new Identifier("goblin-mod", "example_item"), EXAMPLE_ITEM);
+
 		Registry.register(Registry.ITEM, new Identifier("goblin-mod", "polished_andesite_vertical_slab"),
 				new BlockItem(POLISHED_ANDESITE_VERTICAL_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
 
 		//注册demo_block物品
 		Registry.register(Registry.ITEM, new Identifier("goblin-mod","demo_block"),
 				new BlockItem(DEMO_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+
+		/*
+		 * 注册我们方块实体的默认属性。
+		 * 属性是一个生物当前状态的数值，其中有攻击伤害和生命值等。
+		 * 如果实体没有及时注册适当的属性，则游戏将崩溃。
+		 *
+		 * 在1.15中，它是通过重写实体类内部的方法来完成的。
+		 * 大部分的原版实体都有一个静态方法(例如,ZombieEntity#createZombieAttributes)用于初始化它们的属性。
+		 */
+		FabricDefaultAttributeRegistry.register(CUBE, CubeEntity.createMobAttributes());
+
 	}
 }
