@@ -23,6 +23,10 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import software.bernie.geckolib3.GeckoLib;
+import software.bernie.shadowed.eliotlash.mclib.math.functions.classic.Mod;
+import top.qianran.items.ModItem;
+import top.qianran.util.Registries;
 
 public class GoblinMod implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
@@ -92,6 +96,8 @@ public class GoblinMod implements ModInitializer {
 	//创建一个刷怪蛋物品的实例
 	public static final Item CUBE_SPAWN_EGG = new SpawnEggItem(CUBE, 0xc4c4c4, 0xadadad, new FabricItemSettings().group(ItemGroup.MISC));
 
+	//
+
 	@Override
 	public void onInitialize() {
 
@@ -125,5 +131,10 @@ public class GoblinMod implements ModInitializer {
 		//注册刷怪蛋物品
 		Registry.register(Registry.ITEM, new Identifier("goblin-mod", "cube_spawn_egg"), CUBE_SPAWN_EGG);
 
+
+		//注册
+		Registries.init();
+		GeckoLib.initialize();
+		ModItem.item();
 	}
 }

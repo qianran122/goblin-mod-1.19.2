@@ -1,11 +1,11 @@
-package top.qianran.entity;
+package top.qianran.entity.cube;
 
-import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.util.Identifier;
 import top.qianran.CubeEntity;
 import top.qianran.GoblinModClient;
+import top.qianran.entity.cube.CubeEntityModel;
 
 /*
  * 一个用来提供模型、阴影大小和纹理的渲染器

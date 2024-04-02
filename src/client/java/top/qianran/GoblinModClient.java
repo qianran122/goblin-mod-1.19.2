@@ -8,8 +8,12 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
-import top.qianran.entity.CubeEntityModel;
-import top.qianran.entity.CubeEntityRenderer;
+import top.qianran.entity.ModEntity;
+import top.qianran.entity.cube.CubeEntityModel;
+import top.qianran.entity.cube.CubeEntityRenderer;
+import top.qianran.entity.custom.ShitEntity;
+import top.qianran.entity.shit.ShitEntityRenderer;
+
 @Environment(EnvType.CLIENT)
 public class GoblinModClient implements ClientModInitializer {
 	public static final EntityModelLayer MODEL_CUBE_LAYER = new EntityModelLayer(new Identifier("goblin-mod", "cube"), "main");
@@ -31,5 +35,7 @@ public class GoblinModClient implements ClientModInitializer {
 
 		EntityModelLayerRegistry.registerModelLayer(MODEL_CUBE_LAYER, CubeEntityModel::getTexturedModelData);
 
+		// 注册shit
+		EntityRendererRegistry.register(ModEntity.SHIT_ENTITY, ShitEntityRenderer::new);
 	}
 }
