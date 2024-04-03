@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier;
 import top.qianran.entity.ModEntity;
 import top.qianran.entity.cube.CubeEntityModel;
 import top.qianran.entity.cube.CubeEntityRenderer;
+import top.qianran.entity.goblin.GoblinEntityRenderer;
 import top.qianran.entity.shit.ShitEntityRenderer;
 import top.qianran.entity.shita.ShitAEntityRenderer;
 
@@ -29,14 +30,15 @@ public class GoblinModClient implements ClientModInitializer {
 		 * 实体渲染器也可以在实体基于上下文进行渲染前(EndermanEntityRenderer#render). 操作模型。
 		 */
 		// In 1.17, use EntityRendererRegistry.register (seen below) instead of EntityRendererRegistry.INSTANCE.register (seen above)
-		/*EntityRendererRegistry.register(GoblinMod.CUBE, (context) -> {
+		EntityRendererRegistry.register(GoblinMod.CUBE, (context) -> {
 			return new CubeEntityRenderer(context);
-		});*/
+		});
 
 		EntityModelLayerRegistry.registerModelLayer(MODEL_CUBE_LAYER, CubeEntityModel::getTexturedModelData);
 
-		// 注册shit
+		// 注册实体
 		EntityRendererRegistry.register(ModEntity.SHIT_ENTITY, ShitEntityRenderer::new);
 		EntityRendererRegistry.register(ModEntity.SHITA_ENTITY, ShitAEntityRenderer::new);
+		EntityRendererRegistry.register(ModEntity.GOBLIN_ENTITY, GoblinEntityRenderer::new);
 	}
 }

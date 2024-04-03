@@ -13,5 +13,6 @@ public class Registries {
     private static void registerAttributes(){
         FabricDefaultAttributeRegistry.register(ModEntity.SHIT_ENTITY, ShitEntity.setAttributes());
         FabricDefaultAttributeRegistry.register(ModEntity.SHITA_ENTITY, ShitAEntity.setAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntity.GOBLIN_ENTITY, GoblinEntity.setAttributes());
     }
 }

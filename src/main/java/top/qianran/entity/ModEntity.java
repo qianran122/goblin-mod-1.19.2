@@ -8,6 +8,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import top.qianran.entity.custom.ShitAEntity;
 import top.qianran.entity.custom.ShitEntity;
+import top.qianran.entity.custom.*;
 
 public class ModEntity {
     public static final EntityType<ShitEntity> SHIT_ENTITY = Registry.register(
@@ -23,6 +24,14 @@ public class ModEntity {
             new Identifier("goblin-mod","shita"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, ShitAEntity::new)
                     .dimensions(EntityDimensions.fixed(0.2f,0.2f))
+                    .build()
+    );
+
+    public static final EntityType<GoblinEntity> GOBLIN_ENTITY = Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier("goblin-mod","goblin"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, GoblinEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.5f,1.5f))
                     .build()
     );
 
