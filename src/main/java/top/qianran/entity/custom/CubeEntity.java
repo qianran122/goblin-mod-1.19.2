@@ -1,4 +1,4 @@
-package top.qianran;
+package top.qianran.entity.custom;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.PathAwareEntity;
