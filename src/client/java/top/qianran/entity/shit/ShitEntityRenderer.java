@@ -1,8 +1,11 @@
 package top.qianran.entity.shit;
 
+import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
-import software.bernie.geckolib3.model.AnimatedGeoModel;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 import top.qianran.entity.custom.ShitEntity;
 
@@ -15,4 +18,11 @@ public class ShitEntityRenderer extends GeoEntityRenderer<ShitEntity> {
     public Identifier getTextureLocation(ShitEntity animatable) {
         return new Identifier("goblin-mod","texture/shit.png");
     }
+    @Override
+    public RenderLayer getRenderType(ShitEntity animatable, float partialTick, MatrixStack poseStack,
+                                     VertexConsumerProvider bufferSource, VertexConsumer buffer, int packedLight,
+                                     Identifier texture) {
+        return RenderLayer.getEntityTranslucent(getTextureLocation(animatable));
+    }
+
 }
