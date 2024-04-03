@@ -18,11 +18,6 @@ public class ShitAEntityRenderer extends GeoEntityRenderer<ShitAEntity> {
     public Identifier getTextureLocation(ShitAEntity animatable) {
         return new Identifier("goblin-mod","textures/entity/shita.png");
     }
-    @Override
-    public RenderLayer getRenderType(ShitAEntity animatable, float partialTick, MatrixStack poseStack,
-                                     VertexConsumerProvider bufferSource, VertexConsumer buffer, int packedLight,
-                                     Identifier texture) {
-        return RenderLayer.getEntityTranslucent(getTextureLocation(animatable));
-    }
+
 
 }

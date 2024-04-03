@@ -3,6 +3,7 @@ package top.qianran;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -14,16 +15,17 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.SpawnEggItem;
+import net.minecraft.item.*;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import software.bernie.geckolib3.GeckoLib;
+import top.qianran.entity.ModEntity;
 import top.qianran.entity.custom.CubeEntity;
 import top.qianran.items.ModItem;
 import top.qianran.util.Registries;
@@ -97,12 +99,21 @@ public class GoblinMod implements ModInitializer {
 	//创建一个刷怪蛋物品的实例
 	public static final Item CUBE_SPAWN_EGG = new SpawnEggItem(CUBE, 0xc4c4c4, 0xadadad, new FabricItemSettings().group(ItemGroup.MISC));
 
-	//
+	//战利品表
+	private static final Identifier GOBLIN_ENTITY_LOOT_TABLE_ID = ModEntity.GOBLIN_ENTITY.getLootTableId();
 
 	@Override
 	public void onInitialize() {
 
+		LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, table, setter) -> {
+			if (GOBLIN_ENTITY_LOOT_TABLE_ID.equals(id)) {
+				LootPool.Builder poolBuilder = LootPool.builder()
+						.rolls(ConstantLootNumberProvider.create(10))
+						.with(ItemEntry.builder(Items.DIAMOND));
 
+				table.pool(poolBuilder);
+			}
+		});
 
 
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
