@@ -11,7 +11,6 @@ import net.minecraft.util.Identifier;
 import top.qianran.entity.ModEntity;
 import top.qianran.entity.cube.CubeEntityModel;
 import top.qianran.entity.cube.CubeEntityRenderer;
-import top.qianran.entity.shit.AAALERenderer;
 import top.qianran.entity.shit.ShitEntityRenderer;
 
 @Environment(EnvType.CLIENT)
@@ -37,6 +36,5 @@ public class GoblinModClient implements ClientModInitializer {
 
 		// 注册shit
 		EntityRendererRegistry.register(ModEntity.SHIT_ENTITY, ShitEntityRenderer::new);
-		EntityRendererRegistry.register(ModEntity.AAA_ENTITY, AAALERenderer::new);
 	}
 }

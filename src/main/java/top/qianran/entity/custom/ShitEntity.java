@@ -48,11 +48,11 @@ public class ShitEntity extends AnimalEntity implements IAnimatable {
 
     protected void initGoals(){
         this.goalSelector.add(0, new SwimGoal(this));//游泳
-//        this.goalSelector.add(3, new EscapeDangerGoal(this, 1.25D));//逃离危险
-  //      //this.goalSelector.add(2, new AnimalMateGoal(this, 1.0D));//繁殖
-    //    this.goalSelector.add(4,new WanderAroundFarGoal(this,1.0D));//游荡
-      //  this.goalSelector.add(5, new LookAtEntityGoal(this, AnimalEntity.class, 6.0F));//看实体
-        //this.goalSelector.add(6, new LookAroundGoal(this));//看周围
+        this.goalSelector.add(3, new EscapeDangerGoal(this, 1.25D));//逃离危险
+        //this.goalSelector.add(2, new AnimalMateGoal(this, 1.0D));//繁殖
+        this.goalSelector.add(4,new WanderAroundFarGoal(this,1.0D));//游荡
+        this.goalSelector.add(5, new LookAtEntityGoal(this, AnimalEntity.class, 6.0F));//看实体
+        this.goalSelector.add(6, new LookAroundGoal(this));//看周围
     }
     //动画
 
