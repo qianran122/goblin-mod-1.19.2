@@ -24,7 +24,7 @@ import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import software.bernie.geckolib3.GeckoLib;
-import software.bernie.shadowed.eliotlash.mclib.math.functions.classic.Mod;
+import top.qianran.entity.custom.CubeEntity;
 import top.qianran.items.ModItem;
 import top.qianran.util.Registries;
 //import top.qianran.util.Registries;
