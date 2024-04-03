@@ -6,7 +6,6 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import top.qianran.entity.custom.AAALEEntity;
 import top.qianran.entity.custom.ShitEntity;
 
 public class ModEntity {
@@ -18,13 +17,7 @@ public class ModEntity {
                     .build()
     );
 
-    public static final EntityType<AAALEEntity> AAA_ENTITY= Registry.register(
-            Registry.ENTITY_TYPE,
-            new Identifier("goblin-mod","aaa"),
-            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, AAALEEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.9f,0.9f))//碰撞箱
-                    .build()
-    );
+
 
 
 }
