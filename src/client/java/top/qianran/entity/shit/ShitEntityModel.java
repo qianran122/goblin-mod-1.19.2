@@ -12,7 +12,7 @@ public class ShitEntityModel extends AnimatedGeoModel<ShitEntity> {
 
     @Override
     public Identifier getTextureResource(ShitEntity object) {
-        return new Identifier("goblin-mod","texture/shit.png");
+        return new Identifier("goblin-mod","textures/entity/shit/shit.png");
     }
 
     @Override
