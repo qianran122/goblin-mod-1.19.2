@@ -1,4 +1,21 @@
 {
   "entity.goblin-mod.goblin": "goblin",
-  "item.goblin-mod.goblin_spawn_egg": "goblin spawn egg"
+  "item.goblin-mod.goblin_spawn_egg": "goblin spawn egg",
+  "itemGroup.goblin-mod.goblin_item": "Goblin Items",
+  "item.goblin-mod.red_diamond.tooltip": "explosion",
+  "item.goblin-mod.goblin_meat": "goblin meat",
+
+  "item.goblin-mod.goblin_sword": "goblin sword",
+  "item.goblin-mod.goblin_pickaxe": "goblin pickaxe",
+  "item.goblin-mod.goblin_axe": "goblin axe",
+  "item.goblin-mod.goblin_shovel": "goblin shovel",
+  "item.goblin-mod.goblin_hoe": "goblin hoe",
+
+  "item.goblin-mod.goblin_helmet": "goblin helmet",
+  "item.goblin-mod.goblin_chestplate": "goblin chestplate",
+  "item.goblin-mod.goblin_leggings": "goblin leggings",
+  "item.goblin-mod.goblin_boots": "goblin boots",
+
+  "block.goblin-mod.red_diamond_block": "red diamond block"
+
 }

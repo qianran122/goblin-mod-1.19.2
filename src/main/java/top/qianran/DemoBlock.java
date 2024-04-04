@@ -27,6 +27,8 @@ public class DemoBlock extends Block implements BlockEntityProvider {
         super(settings);
     }
 
+
+
     //将方块实体连接到方块
     @Nullable
     @Override
