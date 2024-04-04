@@ -9,8 +9,10 @@ import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityT
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.Material;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -27,7 +29,8 @@ import org.slf4j.LoggerFactory;
 import software.bernie.geckolib3.GeckoLib;
 import top.qianran.entity.ModEntity;
 import top.qianran.entity.custom.CubeEntity;
-import top.qianran.items.ModItem;
+import top.qianran.util.ModBlocks;
+import top.qianran.util.ModItems;
 import top.qianran.util.Registries;
 //import top.qianran.util.Registries;
 
@@ -102,8 +105,15 @@ public class GoblinMod implements ModInitializer {
 	//战利品表
 	private static final Identifier GOBLIN_ENTITY_LOOT_TABLE_ID = ModEntity.GOBLIN_ENTITY.getLootTableId();
 
+
+	public static final Block RED_DIAMOND_BLOCK = new Block(AbstractBlock.Settings.of(Material.STONE).strength(2.0f).requiresTool());
+
 	@Override
 	public void onInitialize() {
+		Registry.register(Registry.BLOCK, new Identifier("goblin-mod", "red_diamond_block"), RED_DIAMOND_BLOCK);
+		Registry.register(Registry.ITEM, new Identifier("goblin-mod", "red_diamond_block"),
+				new BlockItem(RED_DIAMOND_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+
 
 		LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, table, setter) -> {
 			if (GOBLIN_ENTITY_LOOT_TABLE_ID.equals(id)) {
@@ -147,6 +157,7 @@ public class GoblinMod implements ModInitializer {
 		//注册
 		Registries.init();
 		GeckoLib.initialize();
-		ModItem.item();
+		ModItems.item();
+		ModBlocks.block();
 	}
 }

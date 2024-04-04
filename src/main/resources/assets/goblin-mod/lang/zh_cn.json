@@ -1,4 +1,20 @@
 {
   "entity.goblin-mod.goblin": "哥布林",
-  "item.goblin-mod.goblin_spawn_egg": "哥布林生成蛋"
+  "item.goblin-mod.goblin_spawn_egg": "哥布林生成蛋",
+  "itemGroup.goblin-mod.goblin_item": "哥布林物品",
+  "item.goblin-mod.red_diamond.tooltip": "可以爆炸",
+  "item.goblin-mod.goblin_meat": "哥布林肉",
+
+  "item.goblin-mod.goblin_sword": "哥布林剑",
+  "item.goblin-mod.goblin_pickaxe": "哥布林镐",
+  "item.goblin-mod.goblin_axe": "哥布林斧",
+  "item.goblin-mod.goblin_shovel": "哥布林铲",
+  "item.goblin-mod.goblin_hoe": "哥布林锄",
+  "item.goblin-mod.goblin_helmet": "哥布林头盔",
+  "item.goblin-mod.goblin_chestplate": "哥布林胸甲",
+  "item.goblin-mod.goblin_leggings": "哥布林护腿",
+  "item.goblin-mod.goblin_boots": "哥布林靴子",
+
+  "block.goblin-mod.red_diamond_block": "红宝石块"
+
 }
