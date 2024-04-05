@@ -106,13 +106,9 @@ public class GoblinMod implements ModInitializer {
 	private static final Identifier GOBLIN_ENTITY_LOOT_TABLE_ID = ModEntity.GOBLIN_ENTITY.getLootTableId();
 
 
-	public static final Block RED_DIAMOND_BLOCK = new Block(AbstractBlock.Settings.of(Material.STONE).strength(2.0f).requiresTool());
 
 	@Override
 	public void onInitialize() {
-		Registry.register(Registry.BLOCK, new Identifier("goblin-mod", "red_diamond_block"), RED_DIAMOND_BLOCK);
-		Registry.register(Registry.ITEM, new Identifier("goblin-mod", "red_diamond_block"),
-				new BlockItem(RED_DIAMOND_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
 
 
 		LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, table, setter) -> {
