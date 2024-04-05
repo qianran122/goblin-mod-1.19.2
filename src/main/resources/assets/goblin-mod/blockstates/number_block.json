@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "number=1": {"model": "goblin-mod:block/number_block_1"},
+    "number=2": {"model": "goblin-mod:block/number_block_2"},
+    "number=3": {"model": "goblin-mod:block/number_block_3"}
+  }
+}

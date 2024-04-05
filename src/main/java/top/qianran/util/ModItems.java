@@ -52,7 +52,10 @@ public class ModItems {
                 stacks.add(new ItemStack(GOBLIN_LEGGINGS));
                 stacks.add(new ItemStack(GOBLIN_BOOTS));
                 //方块
-                stacks.add(new ItemStack(GoblinMod.RED_DIAMOND_BLOCK));
+                stacks.add(new ItemStack(ModBlocks.RED_DIAMOND_BLOCK));
+                stacks.add(new ItemStack(ModBlocks.TEST_BOX_BLOCK));
+                stacks.add(new ItemStack(ModBlocks.CHANGE_BLOCK));
+                stacks.add(new ItemStack(ModBlocks.NUMBER_BLOCK));
                 //测试物品
                 stacks.add(new ItemStack(TEST1));
                 stacks.add(new ItemStack(TEST2));

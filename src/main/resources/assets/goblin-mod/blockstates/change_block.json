@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "color=true": {"model": "goblin-mod:block/change_block_blue"},
+    "color=false": {"model": "goblin-mod:block/change_block_yellow"}
+  }
+}
