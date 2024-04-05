@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "goblin-mod:block/container_block" }
+  }
+}

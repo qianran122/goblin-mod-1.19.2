@@ -6,14 +6,18 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
+import top.qianran.blocks.uiBlock.UIBlockScreen;
+import top.qianran.commands.NbtCommand;
 import top.qianran.entity.ModEntity;
 import top.qianran.entity.cube.CubeEntityModel;
 import top.qianran.entity.cube.CubeEntityRenderer;
 import top.qianran.entity.goblin.GoblinEntityRenderer;
 import top.qianran.entity.shit.ShitEntityRenderer;
 import top.qianran.entity.shita.ShitAEntityRenderer;
+import top.qianran.util.ModBlocks;
 
 @Environment(EnvType.CLIENT)
 public class GoblinModClient implements ClientModInitializer {
@@ -40,5 +44,12 @@ public class GoblinModClient implements ClientModInitializer {
 		EntityRendererRegistry.register(ModEntity.SHIT_ENTITY, ShitEntityRenderer::new);
 		EntityRendererRegistry.register(ModEntity.SHITA_ENTITY, ShitAEntityRenderer::new);
 		EntityRendererRegistry.register(ModEntity.GOBLIN_ENTITY, GoblinEntityRenderer::new);
+
+		//注册UIBlock的东西
+		ScreenRegistry.register(ModBlocks.UI_BLOCK_SCREEN_HANDLER, UIBlockScreen::new);
+
+		CommandRegistrationCallback.EVENT.register(
+				((dispatcher, registryAccess, environment) -> NbtCommand.register(dispatcher))
+		);
 	}
 }

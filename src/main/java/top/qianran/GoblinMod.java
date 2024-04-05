@@ -9,10 +9,8 @@ import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityT
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
-import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.Material;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -29,12 +27,14 @@ import org.slf4j.LoggerFactory;
 import software.bernie.geckolib3.GeckoLib;
 import top.qianran.entity.ModEntity;
 import top.qianran.entity.custom.CubeEntity;
-import top.qianran.util.ModBlocks;
-import top.qianran.util.ModItems;
-import top.qianran.util.Registries;
+import top.qianran.util.*;
 //import top.qianran.util.Registries;
 
 public class GoblinMod implements ModInitializer {
+
+
+
+
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
@@ -42,7 +42,7 @@ public class GoblinMod implements ModInitializer {
 
 
 
-	public static final Item EXAMPLE_ITEM = new Item(new Item.Settings().group(ItemGroup.MISC));
+	public static final Item EXAMPLE_ITEM = new Item(new Item.Settings());
 
 	public static final VerticalSlabBlock POLISHED_ANDESITE_VERTICAL_SLAB = Registry.register(
 			Registry.BLOCK,
@@ -70,7 +70,7 @@ public class GoblinMod implements ModInitializer {
 	public static final Identifier BOX = new Identifier(MOD_ID, "box_block");
 	static {
 		BOX_BLOCK = Registry.register(Registry.BLOCK, BOX, new BoxBlock(FabricBlockSettings.copyOf(Blocks.CHEST)));
-		BOX_BLOCK_ITEM = Registry.register(Registry.ITEM, BOX, new BlockItem(BOX_BLOCK, new Item.Settings().group(ItemGroup.MISC)));
+		BOX_BLOCK_ITEM = Registry.register(Registry.ITEM, BOX, new BlockItem(BOX_BLOCK, new Item.Settings()));
 
 		//The parameter of build at the very end is always null, do not worry about it
 		// 1.17 之前
@@ -100,7 +100,7 @@ public class GoblinMod implements ModInitializer {
 	);
 
 	//创建一个刷怪蛋物品的实例
-	public static final Item CUBE_SPAWN_EGG = new SpawnEggItem(CUBE, 0xc4c4c4, 0xadadad, new FabricItemSettings().group(ItemGroup.MISC));
+	public static final Item CUBE_SPAWN_EGG = new SpawnEggItem(CUBE, 0xc4c4c4, 0xadadad, new FabricItemSettings());
 
 	//战利品表
 	private static final Identifier GOBLIN_ENTITY_LOOT_TABLE_ID = ModEntity.GOBLIN_ENTITY.getLootTableId();
@@ -109,6 +109,10 @@ public class GoblinMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+
+
+
+
 
 
 		LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, table, setter) -> {
@@ -149,11 +153,13 @@ public class GoblinMod implements ModInitializer {
 		//注册刷怪蛋物品
 		Registry.register(Registry.ITEM, new Identifier("goblin-mod", "cube_spawn_egg"), CUBE_SPAWN_EGG);
 
-
+		//加载测试物品组
+		TestGroup.init();
 		//注册
 		Registries.init();
 		GeckoLib.initialize();
 		ModItems.item();
 		ModBlocks.block();
+		ModRecipes.init();
 	}
 }
