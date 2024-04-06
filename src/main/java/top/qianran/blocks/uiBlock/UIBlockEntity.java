@@ -55,7 +55,7 @@ public class UIBlockEntity extends LootableContainerBlockEntity {
                 entity.tick = 0;
                 entity.inv.get(0).decrement(1);
                 if(entity.inv.get(1).isEmpty()){
-                    entity.inv.set(1, new ItemStack(Items.DIAMOND));
+                    entity.inv.set(1, new ItemStack(Items.DIAMOND,2));
                 } else {
                     entity.inv.get(1).increment(1);
                 }

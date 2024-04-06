@@ -14,7 +14,7 @@ public class GoblinToolMaterial implements ToolMaterial {
     //挖掘速度
     @Override
     public float getMiningSpeedMultiplier() {
-        return 0;
+        return 10;
     }
 
     //攻击伤害

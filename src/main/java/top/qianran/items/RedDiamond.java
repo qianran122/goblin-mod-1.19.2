@@ -3,6 +3,7 @@ package top.qianran.items;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.text.Text;
@@ -12,10 +13,15 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
 import org.jetbrains.annotations.Nullable;
+import top.qianran.util.Registries;
+import top.qianran.util.TestGroup;
 
 import java.util.List;
 
-public class RedDiamond extends Item {
+public class
+RedDiamond extends Item {
+
+
 
     public RedDiamond(Settings settings) {
         super(settings);

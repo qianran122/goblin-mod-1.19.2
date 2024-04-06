@@ -9,7 +9,6 @@ import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
-import top.qianran.blocks.uiBlock.UIBlockScreen;
 import top.qianran.commands.NbtCommand;
 import top.qianran.entity.ModEntity;
 import top.qianran.entity.cube.CubeEntityModel;
@@ -48,6 +47,7 @@ public class GoblinModClient implements ClientModInitializer {
 		//注册UIBlock的东西
 		ScreenRegistry.register(ModBlocks.UI_BLOCK_SCREEN_HANDLER, UIBlockScreen::new);
 
+		//command
 		CommandRegistrationCallback.EVENT.register(
 				((dispatcher, registryAccess, environment) -> NbtCommand.register(dispatcher))
 		);

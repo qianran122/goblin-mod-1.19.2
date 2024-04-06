@@ -22,7 +22,7 @@
 			"top.qianran.GoblinModClient"
 		],
 		"fabric-datagen": [
-			"top.qianran.GoblinModDataGenerator"
+          "top.qianran.dataGenerator.GoblinModDataGenerator"
 		]
 	},
 	"mixins": [

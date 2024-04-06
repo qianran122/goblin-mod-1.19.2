@@ -29,6 +29,7 @@ public class BreakBlock extends BlockWithEntity {
         return checkType(type, ModBlocks.BREAK_ENTITY, (world1, pos, state1, blockEntity) -> BreakEntity.tick(world1, pos));
     }
 
+
     @Override
     public BlockRenderType getRenderType(BlockState state) {
         return BlockRenderType.MODEL;
