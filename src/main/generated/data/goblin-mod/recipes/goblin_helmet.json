@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "g": {
+      "item": "goblin-mod:goblin_meat"
+    }
+  },
+  "pattern": [
+    "ggg",
+    "g g"
+  ],
+  "result": {
+    "item": "goblin-mod:goblin_helmet"
+  }
+}

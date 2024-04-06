@@ -56,34 +56,28 @@ public class UIBlockScreenHandler extends ScreenHandler {
         return this.propertyDelegate.get(0);
     }
     @Override
-    public ItemStack transferSlot(PlayerEntity player, int index) {
-        ItemStack itemStack = ItemStack.EMPTY;
-        Slot slot =(Slot) this.slots.get(index);
+    public ItemStack transferSlot(PlayerEntity player, int invSlot) {
+        ItemStack newStack = ItemStack.EMPTY;
+        Slot slot = this.slots.get(invSlot);
         if (slot != null && slot.hasStack()) {
-            ItemStack itemStack2 = slot.getStack();
-            itemStack = itemStack2.copy();
-            ItemStack itemStack3 = this.inventory.getStack(0);
-            ItemStack itemStack4 = this.inventory.getStack(1);
-            if (index < 2) {
-                if (!this.insertItem(itemStack2, 3, 39, true)) {
+            ItemStack originalStack = slot.getStack();
+            newStack = originalStack.copy();
+            if (invSlot < this.inventory.size()) {
+                if (!this.insertItem(originalStack, this.inventory.size(), this.slots.size(), true)) {
                     return ItemStack.EMPTY;
                 }
-                slot.onQuickTransfer(itemStack2, itemStack);
-            } else if (index == 0 || index == 1 ? !this.insertItem(itemStack2, 2, 39, false) : (itemStack3.isEmpty() || itemStack4.isEmpty() ? !this.insertItem(itemStack2, 0, 1, false) : false)) {
+            } else if (!this.insertItem(originalStack, 0, this.inventory.size(), false)) {
                 return ItemStack.EMPTY;
             }
-            if (itemStack2.isEmpty()) {
+
+            if (originalStack.isEmpty()) {
                 slot.setStack(ItemStack.EMPTY);
             } else {
                 slot.markDirty();
             }
-            if (itemStack2.getCount() == itemStack.getCount()) {
-                return ItemStack.EMPTY;
-            }
-            slot.onTakeItem(player, itemStack2);
         }
 
-        return itemStack;
+        return newStack;
     }
 
     @Override

@@ -16,6 +16,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -30,9 +31,9 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class GoblinEntity extends AnimalEntity implements IAnimatable, Monster {
 
-    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
+    private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
     private static final TrackedData<Boolean> ATTACKING = DataTracker.registerData(GoblinEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
-
+    public static final Identifier ID = new Identifier("goblin-mod", "goblin");
     public GoblinEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
     }

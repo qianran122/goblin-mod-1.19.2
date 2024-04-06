@@ -23,14 +23,15 @@ public class TestGroup {
                 stacks.add(new ItemStack(ModItems.TEST2));
                 stacks.add(new ItemStack(ModItems.TEST3));
                 stacks.add(new ItemStack(ModItems.JB_ITEM));
-                stacks.add(new ItemStack(ModItems.RED_DIAMOND));
                 stacks.add(new ItemStack(ModItems.BOWL_OF_WATER));
                 stacks.add(new ItemStack(GoblinMod.POLISHED_ANDESITE_VERTICAL_SLAB));
                 //方块
                 stacks.add(new ItemStack(ModBlocks.RED_DIAMOND_BLOCK));
+                stacks.add(new ItemStack(ModBlocks.RED_DIAMOND_ORE));
                 stacks.add(new ItemStack(ModBlocks.TEST_BOX_BLOCK));
                 stacks.add(new ItemStack(ModBlocks.CHANGE_BLOCK));
                 stacks.add(new ItemStack(ModBlocks.NUMBER_BLOCK));
+                stacks.add(new ItemStack(ModBlocks.EXAMPLE_RECIPES_BLOCK));
                 //带方块实体的方块
                 stacks.add(new ItemStack(ModBlocks.BREAK_BLOCK));
                 stacks.add(new ItemStack(ModBlocks.CONTAINER_BLOCK));

@@ -1,0 +1,13 @@
+{
+    "type": "goblin-mod:example_recipe",
+    "input1": {
+      "item": "minecraft:redstone"
+    },
+    "input2": {
+        "tag": "minecraft:logs"
+    },
+    "outputItem": "minecraft:cobblestone",
+    "outputAmount": "20"
+
+}
+

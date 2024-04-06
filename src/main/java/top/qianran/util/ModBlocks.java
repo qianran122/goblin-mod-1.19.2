@@ -18,6 +18,7 @@ import top.qianran.blocks.breakBlock.BreakBlock;
 import top.qianran.blocks.breakBlock.BreakEntity;
 import top.qianran.blocks.containerBlock.ContainerBlock;
 import top.qianran.blocks.containerBlock.ContainerEntity;
+import top.qianran.blocks.exampleRecipesBlock.ExampleRecipesBlock;
 import top.qianran.blocks.newBoxBlock.NewBoxBlock;
 import top.qianran.blocks.newBoxBlock.NewBoxEntity;
 import top.qianran.blocks.uiBlock.UIBlock;
@@ -28,7 +29,8 @@ public class ModBlocks {
     public static void block(){
     }
 
-    public static final Block RED_DIAMOND_BLOCK = ModBlocks.registerBlock("red_diamond_block",new Block(FabricBlockSettings.of(Material.METAL).strength(1f).requiresTool()));
+    public static final Block RED_DIAMOND_BLOCK = ModBlocks.registerBlock("red_diamond_block",new Block(AbstractBlock.Settings.of(Material.STONE).strength(2.0f).requiresTool()));
+    public static final Block RED_DIAMOND_ORE = ModBlocks.registerBlock("red_diamond_ore",new Block(AbstractBlock.Settings.of(Material.STONE).strength(2.0f).requiresTool()));
     public static final Block TEST_BOX_BLOCK = ModBlocks.registerBlock("test_box_block",new TextBoxBlock(FabricBlockSettings.of(Material.STONE)));
     public static final Block CHANGE_BLOCK = ModBlocks.registerBlock("change_block", new ChangeBlock(FabricBlockSettings.of(Material.STONE)));
     public static final Block NUMBER_BLOCK = ModBlocks.registerBlock("number_block", new NumberBlock(FabricBlockSettings.of(Material.STONE).nonOpaque()));
@@ -40,14 +42,15 @@ public class ModBlocks {
     public static final Block NEW_BOX_BLOCK = ModBlocks.registerBlock("new_box_block", new NewBoxBlock(FabricBlockSettings.of(Material.STONE)));
     public static BlockEntityType<NewBoxEntity> NEW_BOX_ENTITY = ModBlocks.registerBlockEntity("new_box_entity", FabricBlockEntityTypeBuilder.create(NewBoxEntity::new, NEW_BOX_BLOCK).build(null));
     public static final Block UI_BLOCK = ModBlocks.registerBlock("ui_block", new UIBlock(FabricBlockSettings.of(Material.STONE)));
-    public static BlockEntityType<UIBlockEntity> UI_BLOCK_ENTITY = ModBlocks.registerBlockEntity("ui_block_entity", FabricBlockEntityTypeBuilder.create(UIBlockEntity::new, UI_BLOCK).build(null));
 
+    public static BlockEntityType<UIBlockEntity> UI_BLOCK_ENTITY = ModBlocks.registerBlockEntity("ui_block_entity", FabricBlockEntityTypeBuilder.create(UIBlockEntity::new, UI_BLOCK).build(null));
     public static final ScreenHandlerType<UIBlockScreenHandler> UI_BLOCK_SCREEN_HANDLER;
     static {
         UI_BLOCK_SCREEN_HANDLER = ScreenHandlerRegistry.registerSimple(new Identifier("goblin-mod", "ui_block"), UIBlockScreenHandler::new);
     }
 
-
+    //
+    public static final Block EXAMPLE_RECIPES_BLOCK = ModBlocks.registerBlock("example_recipes_block", new ExampleRecipesBlock(FabricBlockSettings.of(Material.STONE)));
     //注册方块和对应的物品
     private static Block registerBlock(String name, Block block){
         Registry.register(Registry.BLOCK, new Identifier("goblin-mod", name), block);

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "g": {
+      "item": "goblin-mod:goblin_meat"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " g ",
+    " s ",
+    " s "
+  ],
+  "result": {
+    "item": "goblin-mod:goblin_shovel"
+  }
+}

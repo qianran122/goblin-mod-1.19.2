@@ -103,18 +103,12 @@ public class GoblinMod implements ModInitializer {
 	public static final Item CUBE_SPAWN_EGG = new SpawnEggItem(CUBE, 0xc4c4c4, 0xadadad, new FabricItemSettings());
 
 	//战利品表
-	private static final Identifier GOBLIN_ENTITY_LOOT_TABLE_ID = ModEntity.GOBLIN_ENTITY.getLootTableId();
-
-
+	//private static final Identifier GOBLIN_ENTITY_LOOT_TABLE_ID = ModEntity.GOBLIN_ENTITY.getLootTableId();
 
 	@Override
 	public void onInitialize() {
 
-
-
-
-
-
+/*
 		LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, table, setter) -> {
 			if (GOBLIN_ENTITY_LOOT_TABLE_ID.equals(id)) {
 				LootPool.Builder poolBuilder = LootPool.builder()
@@ -123,7 +117,7 @@ public class GoblinMod implements ModInitializer {
 
 				table.pool(poolBuilder);
 			}
-		});
+		});*/
 
 
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
