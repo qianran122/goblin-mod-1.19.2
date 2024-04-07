@@ -3,10 +3,12 @@ package top.qianran;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 import top.qianran.commands.NbtCommand;
@@ -54,5 +56,9 @@ public class GoblinModClient implements ClientModInitializer {
 		CommandRegistrationCallback.EVENT.register(
 				((dispatcher, registryAccess, environment) -> NbtCommand.register(dispatcher))
 		);
+
+		//树相关
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MYSTERIOUS_LEAVES, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MYSTERIOUS_SAPLING, RenderLayer.getCutout());
 	}
 }

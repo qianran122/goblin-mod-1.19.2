@@ -3,10 +3,7 @@ package top.qianran.util;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Material;
-import net.minecraft.block.PillarBlock;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.BlockItem;
@@ -28,6 +25,7 @@ import top.qianran.blocks.newBoxBlock.NewBoxEntity;
 import top.qianran.blocks.uiBlock.UIBlock;
 import top.qianran.blocks.uiBlock.UIBlockEntity;
 import top.qianran.blocks.uiBlock.UIBlockScreenHandler;
+import top.qianran.world.feature.tree.ModMysteriousSaplingGenerator;
 
 public class ModBlocks {
     public static void block(){
@@ -38,6 +36,9 @@ public class ModBlocks {
     public static final Block MYSTERIOUS_LOG_STRIPPED = ModBlocks.registerBlock("mysterious_log_stripped", new PillarBlock(AbstractBlock.Settings.of(Material.WOOD).strength(4f)));
     public static final Block MYSTERIOUS_WOOD_STRIPPED = ModBlocks.registerBlock("mysterious_wood_stripped", new PillarBlock(AbstractBlock.Settings.of(Material.WOOD).strength(4f)));
     public static final Block MYSTERIOUS_PLANKS = ModBlocks.registerBlock("mysterious_planks", new PillarBlock(AbstractBlock.Settings.of(Material.WOOD).strength(4f)));
+    public static final Block MYSTERIOUS_LEAVES = ModBlocks.registerBlock("mysterious_leaves", new Block(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+    public static final Block MYSTERIOUS_SAPLING = ModBlocks.registerBlock("mysterious_sapling", new SaplingBlock(new ModMysteriousSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
+
 
     public static final Block RED_DIAMOND_BLOCK = ModBlocks.registerBlock("red_diamond_block",new Block(AbstractBlock.Settings.of(Material.STONE).strength(2.0f).requiresTool()));
     public static final Block RED_DIAMOND_ORE = ModBlocks.registerBlock("red_diamond_ore",new Block(AbstractBlock.Settings.of(Material.STONE).strength(2.0f).requiresTool()));

@@ -1,0 +1,6 @@
+{
+  "parent": "block/leaves",
+  "textures": {
+    "all": "goblin-mod:block/mysterious_leaves"
+  }
+}

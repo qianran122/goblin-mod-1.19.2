@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
+import top.qianran.blocks.ModSaplingBlock;
 import top.qianran.entity.ModEntity;
 import top.qianran.entity.custom.*;
 
@@ -26,6 +27,8 @@ public class Registries {
                 stacks.add(new ItemStack(ModBlocks.MYSTERIOUS_LOG_STRIPPED));
                 stacks.add(new ItemStack(ModBlocks.MYSTERIOUS_WOOD_STRIPPED));
                 stacks.add(new ItemStack(ModBlocks.MYSTERIOUS_PLANKS));
+                stacks.add(new ItemStack(ModBlocks.MYSTERIOUS_LEAVES));
+                stacks.add(new ItemStack(ModBlocks.MYSTERIOUS_SAPLING));
                 //武器与工具
                 stacks.add(new ItemStack(ModItems.GOBLIN_SWORD));
                 stacks.add(new ItemStack(ModItems.GOBLIN_AXE));
@@ -70,6 +73,7 @@ public class Registries {
         registry.add(ModBlocks.MYSTERIOUS_LOG_STRIPPED, 5, 5);
         registry.add(ModBlocks.MYSTERIOUS_WOOD_STRIPPED, 5, 5);
         registry.add(ModBlocks.MYSTERIOUS_PLANKS, 5, 20);
+        registry.add(ModBlocks.MYSTERIOUS_LEAVES, 30, 60);
 
     }
 }
