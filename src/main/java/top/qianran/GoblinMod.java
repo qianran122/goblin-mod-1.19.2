@@ -28,6 +28,8 @@ import software.bernie.geckolib3.GeckoLib;
 import top.qianran.entity.ModEntity;
 import top.qianran.entity.custom.CubeEntity;
 import top.qianran.util.*;
+import top.qianran.world.feature.ModConfiguredFeatures;
+import top.qianran.world.gen.ModWorldGen;
 //import top.qianran.util.Registries;
 
 public class GoblinMod implements ModInitializer {
@@ -107,6 +109,9 @@ public class GoblinMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModConfiguredFeatures.register();
+		ModWorldGen.gen();
+
 
 /*
 		LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, table, setter) -> {

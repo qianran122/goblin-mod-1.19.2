@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "all": "goblin-mod:block/mysterious_sapling"
+  }
+}
