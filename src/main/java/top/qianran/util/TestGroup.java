@@ -25,6 +25,7 @@ public class TestGroup {
                 stacks.add(new ItemStack(ModItems.JB_ITEM));
                 stacks.add(new ItemStack(ModItems.BOWL_OF_WATER));
                 stacks.add(new ItemStack(GoblinMod.POLISHED_ANDESITE_VERTICAL_SLAB));
+                stacks.add(new ItemStack(ModItems.RED_DIAMOND));
                 //方块
                 stacks.add(new ItemStack(ModBlocks.RED_DIAMOND_BLOCK));
                 stacks.add(new ItemStack(ModBlocks.RED_DIAMOND_ORE));
@@ -37,6 +38,7 @@ public class TestGroup {
                 stacks.add(new ItemStack(ModBlocks.CONTAINER_BLOCK));
                 stacks.add(new ItemStack(ModBlocks.NEW_BOX_BLOCK));
                 stacks.add(new ItemStack(ModBlocks.UI_BLOCK));
+                stacks.add(new ItemStack(ModBlocks.FERMENTATION_VESSELS_BLOCK));
             })
             .build();
 

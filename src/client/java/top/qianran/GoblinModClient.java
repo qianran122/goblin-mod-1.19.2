@@ -16,6 +16,8 @@ import top.qianran.entity.cube.CubeEntityRenderer;
 import top.qianran.entity.goblin.GoblinEntityRenderer;
 import top.qianran.entity.shit.ShitEntityRenderer;
 import top.qianran.entity.shita.ShitAEntityRenderer;
+import top.qianran.screen.BoxScreen;
+import top.qianran.screen.*;
 import top.qianran.util.ModBlocks;
 
 @Environment(EnvType.CLIENT)
@@ -44,8 +46,9 @@ public class GoblinModClient implements ClientModInitializer {
 		EntityRendererRegistry.register(ModEntity.SHITA_ENTITY, ShitAEntityRenderer::new);
 		EntityRendererRegistry.register(ModEntity.GOBLIN_ENTITY, GoblinEntityRenderer::new);
 
-		//注册UIBlock的东西
+		//注册Screen
 		ScreenRegistry.register(ModBlocks.UI_BLOCK_SCREEN_HANDLER, UIBlockScreen::new);
+		ScreenRegistry.register(ModBlocks.FERMENTATION_VESSELS_BLOCK_SCREEN_HANDLER, fermentationVesselsBlockScreen::new);
 
 		//command
 		CommandRegistrationCallback.EVENT.register(

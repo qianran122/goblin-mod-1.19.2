@@ -23,7 +23,6 @@ public class GoblinModDataGenerator implements DataGeneratorEntrypoint {
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 		fabricDataGenerator.addProvider(MyRecipeGenerator::new);
 		fabricDataGenerator.addProvider(MyBlockLootTables::new);
-		fabricDataGenerator.addProvider(MyEntityLootTables::new);
 	}
 }
 

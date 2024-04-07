@@ -1,4 +1,4 @@
-package top.qianran;
+package top.qianran.screen;
 
 
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -10,6 +10,7 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
+import top.qianran.BoxScreenHandler;
 
 import java.util.Optional;
 

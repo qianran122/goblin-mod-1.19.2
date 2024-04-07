@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "g": {
-      "item": "goblin-mod:goblin_meat"
+      "item": "goblin-mod:goblin_ingot"
     },
     "s": {
       "item": "minecraft:stick"
