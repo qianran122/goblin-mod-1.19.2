@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "goblin-mod:block/mysterious_planks"
+  }
+}

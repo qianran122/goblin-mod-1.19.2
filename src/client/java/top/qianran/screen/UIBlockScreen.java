@@ -1,4 +1,4 @@
-package top.qianran;
+package top.qianran.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
@@ -12,7 +12,6 @@ import top.qianran.blocks.uiBlock.UIBlockScreenHandler;
 public class UIBlockScreen extends HandledScreen<UIBlockScreenHandler> {
 
     private static final Identifier TEXTURE = new Identifier("goblin-mod", "textures/gui/container/ui_block.png");
-
     /**
      * x:目标x坐标
      * y:目标y坐标

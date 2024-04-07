@@ -20,11 +20,13 @@ public class UIBlockEntity extends LootableContainerBlockEntity {
     DefaultedList<ItemStack> inv = DefaultedList.ofSize(size, ItemStack.EMPTY);
 
     private int tick = 0;
+    public UIBlockEntity(BlockPos blockPos, BlockState blockState) {
+        super(ModBlocks.UI_BLOCK_ENTITY, blockPos, blockState);
+    }
     protected final PropertyDelegate propertyDelegate = new PropertyDelegate() {
         @Override
         public int get(int index) {
             return switch (index) {
-                case -1 -> size;
                 case 0 -> tick;
                 default -> 0;
             };
@@ -40,14 +42,9 @@ public class UIBlockEntity extends LootableContainerBlockEntity {
 
         @Override
         public int size() {
-            return 2;
+            return 1;
         }
     };
-
-    public UIBlockEntity(BlockPos blockPos, BlockState blockState) {
-        super(ModBlocks.UI_BLOCK_ENTITY, blockPos, blockState);
-    }
-
     public static void tick(UIBlockEntity entity){
         if(!entity.inv.get(0).isEmpty() && entity.inv.get(1).getCount() < entity.inv.get(1).getMaxCount()){
             entity.tick++;

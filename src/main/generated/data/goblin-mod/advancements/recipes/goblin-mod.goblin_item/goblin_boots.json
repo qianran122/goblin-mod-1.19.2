@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_goblin_meat": {
+    "has_goblin_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "goblin-mod:goblin_meat"
+              "goblin-mod:goblin_ingot"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_goblin_meat",
+      "has_goblin_ingot",
       "has_the_recipe"
     ]
   ],

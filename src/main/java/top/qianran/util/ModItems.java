@@ -16,6 +16,7 @@ import top.qianran.tools.*;
 
 public class ModItems {
     public static final Item GOBLIN_MEAT = ModItems.registerItem("goblin_meat", new Item(new Item.Settings()));
+    public static final Item GOBLIN_INGOT = ModItems.registerItem("goblin_ingot", new Item(new Item.Settings()));
     //攻速默认4f，如果想设置3.2f的攻速，写-0.8f
     public static final Item GOBLIN_SWORD = ModItems.registerItem("goblin_sword", new GoblinSword(new GoblinToolMaterial(), 8, -0.8f, new FabricItemSettings().group(Registries.GOBLIN_GROUP)));
     public static final Item GOBLIN_AXE = ModItems.registerItem("goblin_axe", new GoblinAxe(new GoblinToolMaterial(), 10, -1.6f, new Item.Settings().group(Registries.GOBLIN_GROUP)));

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "down": "goblin-mod:block/fermentation_vessels_block_down",
+    "up": "goblin-mod:block/fermentation_vessels_block_up",
+    "north": "goblin-mod:block/fermentation_vessels_block_side",
+    "south": "goblin-mod:block/fermentation_vessels_block_side",
+    "west": "goblin-mod:block/fermentation_vessels_block_side",
+    "east": "goblin-mod:block/fermentation_vessels_block_side",
+    "particle": "goblin-mod:block/fermentation_vessels_block_side"
+  }
+}
