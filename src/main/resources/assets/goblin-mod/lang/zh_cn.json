@@ -15,7 +15,12 @@
   "item.goblin-mod.goblin_leggings": "哥布林护腿",
   "item.goblin-mod.goblin_boots": "哥布林靴子",
 
+  "item.goblin-mod.red_diamond": "红宝石",
   "block.goblin-mod.red_diamond_block": "红宝石块",
+  "block.goblin-mod.red_diamond_ore": "红宝石矿石",
+  "block.goblin-mod.red_diamond_ore_deepslate": "深层红宝石矿石",
+
+
 
   "block.goblin-mod.mysterious_log": "神秘原木",
   "block.goblin-mod.mysterious_wood": "神秘木",

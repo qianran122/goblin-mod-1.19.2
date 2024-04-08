@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "goblin-mod:block/mysterious_flower"
+  }
+}

@@ -6,6 +6,8 @@ import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.screen.ScreenHandlerType;
@@ -39,7 +41,8 @@ public class ModBlocks {
     public static final Block MYSTERIOUS_PLANKS = ModBlocks.registerBlock("mysterious_planks", new PillarBlock(AbstractBlock.Settings.of(Material.WOOD).strength(4f)));
     public static final Block MYSTERIOUS_LEAVES = ModBlocks.registerBlock("mysterious_leaves", new Block(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
     public static final Block MYSTERIOUS_SAPLING = ModBlocks.registerBlock("mysterious_sapling", new SaplingBlock(new ModMysteriousSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
-
+    //炖菜buff
+    public static final Block MYSTERIOUS_FLOWER = ModBlocks.registerBlock("mysterious_flower", new FlowerBlock(StatusEffects.STRENGTH, 20, FabricBlockSettings.copy(Blocks.ORANGE_TULIP)));
 
     public static final Block RED_DIAMOND_BLOCK = ModBlocks.registerBlock("red_diamond_block",new Block(AbstractBlock.Settings.of(Material.STONE).strength(2.0f).requiresTool()));
     public static final Block RED_DIAMOND_ORE = ModBlocks.registerBlock("red_diamond_ore",new OreBlock(FabricBlockSettings.copy(Blocks.IRON_ORE), UniformIntProvider.create(5, 10)));//经验球掉落的值的范围

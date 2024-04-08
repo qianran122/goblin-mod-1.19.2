@@ -1,0 +1,15 @@
+{
+  "name": "goblin-mod:test_wood_gold_block",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "goblin-mod:test_wood_gold_block",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "goblin-mod:red_diamond_block",
-    "goblin-mod:red_diamond_ore"
+    "goblin-mod:red_diamond_ore",
+    "goblin-mod:red_diamond_ore_deepslate"
   ]
 }

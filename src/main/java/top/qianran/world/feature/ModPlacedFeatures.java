@@ -5,8 +5,7 @@ import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.feature.PlacedFeatures;
 import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
-import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
-import net.minecraft.world.gen.placementmodifier.HeightmapPlacementModifier;
+import net.minecraft.world.gen.placementmodifier.*;
 import top.qianran.util.ModBlocks;
 
 public class ModPlacedFeatures {
@@ -23,4 +22,9 @@ public class ModPlacedFeatures {
     public static final RegistryEntry<PlacedFeature> RED_DIAMOND_ORE_LOWER_PLACED = PlacedFeatures.register("red_diamond_ore_lower_placed",
             ModConfiguredFeatures.RED_DIAMOND_ORE, ModOreFeatures.modifiersWithCount(10,  //矿石生成数量
                     HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0))));//正态分布 世界底层~0层
+
+    public static final RegistryEntry<PlacedFeature> MYSTERIOUS_FLOWER_PLACED = PlacedFeatures.register("mysterious_flower_placed",
+            ModConfiguredFeatures.MYSTERIOUS_FLOWER, RarityFilterPlacementModifier.of(4),//稀有度过滤器
+            SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of()//生物群系过滤器
+            );
 }
