@@ -10,6 +10,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 import top.qianran.blocks.*;
 import top.qianran.blocks.breakBlock.BreakBlock;
@@ -41,7 +42,8 @@ public class ModBlocks {
 
 
     public static final Block RED_DIAMOND_BLOCK = ModBlocks.registerBlock("red_diamond_block",new Block(AbstractBlock.Settings.of(Material.STONE).strength(2.0f).requiresTool()));
-    public static final Block RED_DIAMOND_ORE = ModBlocks.registerBlock("red_diamond_ore",new Block(AbstractBlock.Settings.of(Material.STONE).strength(2.0f).requiresTool()));
+    public static final Block RED_DIAMOND_ORE = ModBlocks.registerBlock("red_diamond_ore",new OreBlock(FabricBlockSettings.copy(Blocks.IRON_ORE), UniformIntProvider.create(5, 10)));//经验球掉落的值的范围
+    public static final Block RED_DIAMOND_ORE_DEEPSLATE = ModBlocks.registerBlock("red_diamond_ore_deepslate",new OreBlock(FabricBlockSettings.copy(Blocks.DEEPSLATE_DIAMOND_ORE), UniformIntProvider.create(5, 10)));//经验球掉落的值的范围
     public static final Block TEST_BOX_BLOCK = ModBlocks.registerBlock("test_box_block",new TextBoxBlock(FabricBlockSettings.of(Material.STONE)));
     public static final Block CHANGE_BLOCK = ModBlocks.registerBlock("change_block", new ChangeBlock(FabricBlockSettings.of(Material.STONE)));
     public static final Block NUMBER_BLOCK = ModBlocks.registerBlock("number_block", new NumberBlock(FabricBlockSettings.of(Material.STONE).nonOpaque()));
