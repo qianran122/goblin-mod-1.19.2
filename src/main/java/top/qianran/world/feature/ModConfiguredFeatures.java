@@ -43,6 +43,13 @@ public class ModConfiguredFeatures  {
             "red_diamond_ore", Feature.ORE, new OreFeatureConfig(OVERWORLD_RED_DIAMOND_ORE, 9)//生成矿石的数量
     );
 
+    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> MYSTERIOUS_FLOWER = ConfiguredFeatures.register(
+            "mysterious_flower", Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2, //尝试次数，x轴延伸，y轴延伸
+                    PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.MYSTERIOUS_FLOWER)))));
+
+
+
     public static void register() {
 
     }

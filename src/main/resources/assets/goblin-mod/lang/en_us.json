@@ -16,7 +16,10 @@
   "item.goblin-mod.goblin_leggings": "goblin leggings",
   "item.goblin-mod.goblin_boots": "goblin boots",
 
+  "item.goblin-mod.red_diamond": "red diamond",
   "block.goblin-mod.red_diamond_block": "red diamond block",
+  "block.goblin-mod.red_diamond_ore": "red diamond ore",
+  "block.goblin-mod.red_diamond_ore_deepslate": "deepslate red diamond ore",
 
   "block.goblin-mod.mysterious_log": "mysterious log",
   "block.goblin-mod.mysterious_wood": "mysterious wood",

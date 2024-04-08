@@ -29,6 +29,7 @@ public class Registries {
                 stacks.add(new ItemStack(ModBlocks.MYSTERIOUS_PLANKS));
                 stacks.add(new ItemStack(ModBlocks.MYSTERIOUS_LEAVES));
                 stacks.add(new ItemStack(ModBlocks.MYSTERIOUS_SAPLING));
+                stacks.add(new ItemStack(ModBlocks.MYSTERIOUS_FLOWER));
                 //武器与工具
                 stacks.add(new ItemStack(ModItems.GOBLIN_SWORD));
                 stacks.add(new ItemStack(ModItems.GOBLIN_AXE));

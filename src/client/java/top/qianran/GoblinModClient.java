@@ -57,8 +57,9 @@ public class GoblinModClient implements ClientModInitializer {
 				((dispatcher, registryAccess, environment) -> NbtCommand.register(dispatcher))
 		);
 
-		//树相关
+		//不完整方块
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MYSTERIOUS_LEAVES, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MYSTERIOUS_SAPLING, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MYSTERIOUS_FLOWER, RenderLayer.getCutout());
 	}
 }
