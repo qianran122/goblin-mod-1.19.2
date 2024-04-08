@@ -16,10 +16,10 @@ public class GoblinSword extends SwordItem {
         super(toolMaterial, attackDamage, attackSpeed, settings);
     }
 
-    @Override
+    /*@Override
     public boolean canMine(BlockState state, World world, BlockPos pos, PlayerEntity miner) {
         return true;
-    }
+    }*/
 
     @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {

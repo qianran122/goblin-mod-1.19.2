@@ -34,6 +34,15 @@ public class ModConfiguredFeatures  {
                     new RandomFeatureConfig(List.of(new RandomFeatureEntry(ModConfiguredFeatures.MYSTERIOUS_TREE_CHECKED, 0.5f)),
                             ModConfiguredFeatures.MYSTERIOUS_TREE_CHECKED));
 
+    //将矿石加入到石头中（替换石头）
+    public static final List<OreFeatureConfig.Target> OVERWORLD_RED_DIAMOND_ORE = List.of(
+            OreFeatureConfig.createTarget(OreConfiguredFeatures.STONE_ORE_REPLACEABLES, ModBlocks.RED_DIAMOND_ORE.getDefaultState()),
+            OreFeatureConfig.createTarget(OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.RED_DIAMOND_ORE_DEEPSLATE.getDefaultState())
+    );
+    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig,?>> RED_DIAMOND_ORE = ConfiguredFeatures.register(
+            "red_diamond_ore", Feature.ORE, new OreFeatureConfig(OVERWORLD_RED_DIAMOND_ORE, 9)//生成矿石的数量
+    );
+
     public static void register() {
 
     }

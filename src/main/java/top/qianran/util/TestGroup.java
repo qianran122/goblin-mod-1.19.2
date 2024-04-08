@@ -29,6 +29,7 @@ public class TestGroup {
                 //方块
                 stacks.add(new ItemStack(ModBlocks.RED_DIAMOND_BLOCK));
                 stacks.add(new ItemStack(ModBlocks.RED_DIAMOND_ORE));
+                stacks.add(new ItemStack(ModBlocks.RED_DIAMOND_ORE_DEEPSLATE));
                 stacks.add(new ItemStack(ModBlocks.TEST_BOX_BLOCK));
                 stacks.add(new ItemStack(ModBlocks.CHANGE_BLOCK));
                 stacks.add(new ItemStack(ModBlocks.NUMBER_BLOCK));
