@@ -24,6 +24,10 @@ public class TestGroup {
                 stacks.add(new ItemStack(ModItems.TEST3));
                 stacks.add(new ItemStack(ModItems.JB_ITEM));
                 stacks.add(new ItemStack(ModItems.BOWL_OF_WATER));
+                stacks.add(new ItemStack(ModItems.COPY_ITEM));
+                stacks.add(new ItemStack(ModItems.FINISH_BOOK));
+
+
                 stacks.add(new ItemStack(GoblinMod.POLISHED_ANDESITE_VERTICAL_SLAB));
                 stacks.add(new ItemStack(ModItems.RED_DIAMOND));
                 //方块

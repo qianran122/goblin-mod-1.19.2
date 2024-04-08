@@ -29,7 +29,7 @@ public class BowlOfWaterRecipe extends SpecialCraftingRecipe {
             if(!stack.isEmpty()){
                 if(stack.getItem() == Items.BOWL){
                     list.add(stack);
-                } else if(Objects.equals(stack.getNbt(),Items.POTION.getDefaultStack().getNbt())){
+                } else if(Objects.equals(stack.getNbt(), Items.POTION.getDefaultStack().getNbt())){
                     list.add(stack);
                 }
             }

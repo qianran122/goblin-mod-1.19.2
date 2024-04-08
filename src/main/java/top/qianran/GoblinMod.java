@@ -1,5 +1,6 @@
 package top.qianran;
 
+import io.netty.channel.epoll.EpollServerDomainSocketChannel;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -19,6 +20,8 @@ import net.minecraft.item.*;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.recipe.RecipeSerializer;
+import net.minecraft.recipe.SpecialRecipeSerializer;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -27,6 +30,7 @@ import org.slf4j.LoggerFactory;
 import software.bernie.geckolib3.GeckoLib;
 import top.qianran.entity.ModEntity;
 import top.qianran.entity.custom.CubeEntity;
+import top.qianran.recipes.CopyItemRecipe;
 import top.qianran.util.*;
 import top.qianran.world.feature.ModConfiguredFeatures;
 import top.qianran.world.gen.ModWorldGen;
@@ -106,6 +110,9 @@ public class GoblinMod implements ModInitializer {
 
 	//战利品表
 	//private static final Identifier GOBLIN_ENTITY_LOOT_TABLE_ID = ModEntity.GOBLIN_ENTITY.getLootTableId();
+
+	//nbt
+
 
 	@Override
 	public void onInitialize() {
