@@ -12,6 +12,7 @@ import net.minecraft.recipe.SpecialCraftingRecipe;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import top.qianran.GoblinMod;
+import top.qianran.items.CopyItem;
 import top.qianran.util.ModItems;
 import top.qianran.util.ModRecipes;
 
@@ -57,15 +58,7 @@ public class CopyItemRecipe extends SpecialCraftingRecipe {
         }
         if(hasPaper && hasDiamond){
             ItemStack stack = new ItemStack(ModItems.COPY_ITEM);
-            NbtCompound nbt = new NbtCompound();
-            nbt.putInt("amount", count);
-            NbtString string = NbtString.of(NbtString.escape("Number of copies: " + count));
-            NbtList list = new NbtList();
-            list.add(string);
-            NbtCompound nbt1 = new NbtCompound();
-            nbt1.put("Lore", list);
-            nbt.put("display", nbt1);
-            stack.setNbt(nbt);
+            stack.setNbt(CopyItem.newCopyItemNbt(count));
             return stack;
         }
         return ItemStack.EMPTY;

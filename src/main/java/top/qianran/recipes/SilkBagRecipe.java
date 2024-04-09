@@ -29,11 +29,11 @@ public class SilkBagRecipe extends SpecialCraftingRecipe {
             ItemStack stack = inventory.getStack(i);
             if(!stack.isEmpty()){
                 count++;
+                if(stack.getItem() == ModItems.SILK_BAG){
+                    return false;
+                }
                 if(stack.getItem() == Items.LEATHER){
                     hasLeather = true;
-                }
-                if(stack.hasNbt()){
-                    return false;
                 }
             }
         }
@@ -49,7 +49,7 @@ public class SilkBagRecipe extends SpecialCraftingRecipe {
             ItemStack stack = inventory.getStack(i);
             if(!stack.isEmpty()){
                 count++;
-                if(stack.hasNbt()){
+                if(stack.getItem() == ModItems.SILK_BAG){
                     return ItemStack.EMPTY;
                 }
                 if(stack.getItem() == Items.LEATHER && hasLeather){
@@ -72,6 +72,10 @@ public class SilkBagRecipe extends SpecialCraftingRecipe {
                 NbtCompound nbt = new NbtCompound();
                 nbt.putString("id",id);
                 nbt.putInt("count",count1);
+                if(inventory.getStack(slot).hasNbt()){
+                    NbtCompound itemNbt = inventory.getStack(slot).getNbt();
+                    nbt.put("itemNbt", itemNbt);
+                }
                 list.add(nbt);
             }
             baseNbt.put("items", list);
