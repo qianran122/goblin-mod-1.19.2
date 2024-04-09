@@ -12,12 +12,9 @@ public class TestGroup {
                     new Identifier("goblin-mod","test_item"))
             .icon(() -> new ItemStack(ModItems.TEST1))
             .appendItems(stacks -> {
-                stacks.add(new ItemStack(GoblinMod.EXAMPLE_ITEM));
                 stacks.add(new ItemStack(GoblinMod.BOX_BLOCK));
                 stacks.add(new ItemStack(GoblinMod.DEMO_BLOCK));
                 stacks.add(new ItemStack(GoblinMod.CUBE_SPAWN_EGG));
-                stacks.add(new ItemStack(ModItems.SHIT_SPAWN_EGG));
-                stacks.add(new ItemStack(ModItems.SHITA_SPAWN_EGG));
 
                 stacks.add(new ItemStack(ModItems.TEST1));
                 stacks.add(new ItemStack(ModItems.TEST2));

@@ -4,6 +4,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.screen.ArrayPropertyDelegate;
@@ -19,9 +20,17 @@ public class fermentationVesselsBlockScreenHandler extends ScreenHandler {
     public Inventory inventory;
     private final PropertyDelegate propertyDelegate;
     public fermentationVesselsBlockScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(4), new ArrayPropertyDelegate(1));
+        this(syncId, playerInventory, new SimpleInventory(10), new ArrayPropertyDelegate(1));
     }
 
+    private void setSlot(int index, int x, int y, Item item){
+        this.addSlot(new Slot(this.inventory, index, x, y) {
+            @Override
+            public boolean canInsert(ItemStack stack) {
+                return stack.getItem() == item;
+            }
+        });
+    }
     //绘制槽位位置
     public fermentationVesselsBlockScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
         super(ModBlocks.FERMENTATION_VESSELS_BLOCK_SCREEN_HANDLER, syncId);
@@ -30,25 +39,16 @@ public class fermentationVesselsBlockScreenHandler extends ScreenHandler {
         this.addProperties(propertyDelegate);
         checkSize(inventory, 3);
         checkDataCount(propertyDelegate, 1);
-        this.addSlot(new Slot(this.inventory, 0, 29, 35) {
-            @Override
-            public boolean canInsert(ItemStack stack) {
-                return stack.getItem() == ModItems.GOBLIN_MEAT;
-            }
-        });
-        this.addSlot(new Slot(this.inventory, 1, 58, 18) {
-            @Override
-            public boolean canInsert(ItemStack stack) {
-                return stack.getItem() == Items.IRON_INGOT;
-            }
-        });
-        this.addSlot(new Slot(this.inventory, 2, 58, 53) {
-            @Override
-            public boolean canInsert(ItemStack stack) {
-                return stack.getItem() == Items.GOLD_INGOT;
-            }
-        });
-        this.addSlot(new Slot(this.inventory, 3, 109, 35) {
+        setSlot(0, 62, 6, ModItems.GOBLIN_MEAT);
+        setSlot(1, 85, 11, ModItems.GOBLIN_MEAT);
+        setSlot(2, 90, 34, ModItems.GOBLIN_MEAT);
+        setSlot(3, 85, 57, ModItems.GOBLIN_MEAT);
+        setSlot(4, 62, 62, ModItems.GOBLIN_MEAT);
+        setSlot(5, 39, 57, ModItems.GOBLIN_MEAT);
+        setSlot(6, 35, 34, ModItems.GOBLIN_MEAT);
+        setSlot(7, 39, 11, ModItems.GOBLIN_MEAT);
+        setSlot(8, 62, 34, Items.IRON_INGOT);
+        this.addSlot(new Slot(this.inventory, 9, 136, 35) {
             @Override
             public boolean canInsert(ItemStack stack) {
                 return false;

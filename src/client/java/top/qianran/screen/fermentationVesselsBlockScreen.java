@@ -36,8 +36,8 @@ public class fermentationVesselsBlockScreen extends HandledScreen<fermentationVe
         int y = this.y;
         this.drawTexture(matrices, x, y, 0, 0, this.backgroundWidth, this.backgroundHeight);
         //绘制进度条
-        int tick =  (int)this.handler.getTick()/3;
-        this.drawTexture(matrices, x + 75, y + 23, 176, 8, tick , 40);
+        int length =  (int)this.handler.getTick()/60;
+        this.drawTexture(matrices, x + 110, y + 38, 177, 0, length , 9);
     }
 
     @Override

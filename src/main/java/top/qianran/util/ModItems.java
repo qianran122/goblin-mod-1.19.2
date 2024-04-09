@@ -5,12 +5,9 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import software.bernie.shadowed.eliotlash.mclib.math.functions.classic.Mod;
 import top.qianran.armor.GoblinArmorItem;
 import top.qianran.armor.material.GoblinArmorMaterial;
-import top.qianran.entity.ModEntity;
 import top.qianran.items.*;
-import top.qianran.recipes.SilkBagRecipe;
 import top.qianran.tools.weapon.GoblinSword;
 import top.qianran.tools.*;
 
@@ -41,9 +38,7 @@ public class ModItems {
     public static final Item SILK_BAG = ModItems.registerItem("silk_bag", new SilkBagItem(new Item.Settings()));
 
 
-    public static final Item SHIT_SPAWN_EGG = ModItems.registerItem("shit_spawn_egg", new SpawnEggItem(ModEntity.SHIT_ENTITY,0xA66D36,0x291C0C, new Item.Settings()));
-    public static final Item SHITA_SPAWN_EGG = ModItems.registerItem("shita_spawn_egg", new SpawnEggItem(ModEntity.SHITA_ENTITY,0xA66D36,0x291C0C, new Item.Settings()));
-    public static final Item GOBLIN_SPAWN_EGG = ModItems.registerItem("goblin_spawn_egg", new SpawnEggItem(ModEntity.GOBLIN_ENTITY, 0x70B319,0x302B11, new Item.Settings()));
+    public static final Item GOBLIN_SPAWN_EGG = ModItems.registerItem("goblin_spawn_egg", new SpawnEggItem(ModEntities.GOBLIN_ENTITY, 0x70B319,0x302B11, new Item.Settings()));
     public static final Item RED_DIAMOND = ModItems.registerItem("red_diamond", new RedDiamond(new Item.Settings().group(TestGroup.TEST_GROUP)));
     public static void item(){
     }

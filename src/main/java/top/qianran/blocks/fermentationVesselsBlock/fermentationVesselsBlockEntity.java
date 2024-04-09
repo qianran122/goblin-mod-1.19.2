@@ -20,7 +20,7 @@ import top.qianran.util.ModItems;
 public class fermentationVesselsBlockEntity extends LootableContainerBlockEntity {
 
     private int tick = 0;
-    private final int size = 4;
+    private final int size = 10;
     DefaultedList<ItemStack> inv = DefaultedList.ofSize(size, ItemStack.EMPTY);
     public fermentationVesselsBlockEntity(BlockPos blockPos, BlockState blockState) {
         super(ModBlocks.FERMENTATION_VESSELS_BLOCK_ENTITY, blockPos, blockState);
@@ -51,19 +51,32 @@ public class fermentationVesselsBlockEntity extends LootableContainerBlockEntity
     //每tick调用一次
     public static void tick(fermentationVesselsBlockEntity entity){
         if( entity.inv.get(0).getItem() == ModItems.GOBLIN_MEAT
-         && entity.inv.get(1).getItem() == Items.IRON_INGOT
-         && entity.inv.get(2).getItem() == Items.GOLD_INGOT
-         && entity.inv.get(3).getCount() < entity.inv.get(3).getMaxCount()) {
+         && entity.inv.get(1).getItem() == ModItems.GOBLIN_MEAT
+         && entity.inv.get(2).getItem() == ModItems.GOBLIN_MEAT
+         && entity.inv.get(3).getItem() == ModItems.GOBLIN_MEAT
+         && entity.inv.get(4).getItem() == ModItems.GOBLIN_MEAT
+         && entity.inv.get(5).getItem() == ModItems.GOBLIN_MEAT
+         && entity.inv.get(6).getItem() == ModItems.GOBLIN_MEAT
+         && entity.inv.get(7).getItem() == ModItems.GOBLIN_MEAT
+         && entity.inv.get(8).getItem() == Items.IRON_INGOT
+         && entity.inv.get(9).getCount() < entity.inv.get(3).getMaxCount()) {
             entity.tick++;
-            if (entity.tick == 20 * 6) {
+            if (entity.tick == 20 * 60) {
                 entity.tick = 0;
                 entity.inv.get(0).decrement(1);
                 entity.inv.get(1).decrement(1);
                 entity.inv.get(2).decrement(1);
-                if (entity.inv.get(3).isEmpty()) {
-                    entity.inv.set(3, new ItemStack(ModItems.GOBLIN_INGOT, 1));
+                entity.inv.get(3).decrement(1);
+                entity.inv.get(4).decrement(1);
+                entity.inv.get(5).decrement(1);
+                entity.inv.get(6).decrement(1);
+                entity.inv.get(7).decrement(1);
+                entity.inv.get(8).decrement(1);
+
+                if (entity.inv.get(9).isEmpty()) {
+                    entity.inv.set(9, new ItemStack(ModItems.GOBLIN_INGOT, 1));
                 } else {
-                    entity.inv.get(3).increment(1);
+                    entity.inv.get(9).increment(1);
 
                 }
             }
@@ -81,7 +94,7 @@ public class fermentationVesselsBlockEntity extends LootableContainerBlockEntity
 
     @Override
     protected Text getContainerName() {
-        return Text.translatable("fermentation_vessels");
+        return Text.translatable("block.goblin-mod.fermentation_vessels_block");
     }
 
     @Override

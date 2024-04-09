@@ -12,12 +12,10 @@ import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 import top.qianran.commands.NbtCommand;
-import top.qianran.entity.ModEntity;
+import top.qianran.util.ModEntities;
 import top.qianran.entity.cube.CubeEntityModel;
 import top.qianran.entity.cube.CubeEntityRenderer;
 import top.qianran.entity.goblin.GoblinEntityRenderer;
-import top.qianran.entity.shit.ShitEntityRenderer;
-import top.qianran.entity.shita.ShitAEntityRenderer;
 import top.qianran.screen.BoxScreen;
 import top.qianran.screen.*;
 import top.qianran.util.ModBlocks;
@@ -44,9 +42,7 @@ public class GoblinModClient implements ClientModInitializer {
 		EntityModelLayerRegistry.registerModelLayer(MODEL_CUBE_LAYER, CubeEntityModel::getTexturedModelData);
 
 		// 注册实体
-		EntityRendererRegistry.register(ModEntity.SHIT_ENTITY, ShitEntityRenderer::new);
-		EntityRendererRegistry.register(ModEntity.SHITA_ENTITY, ShitAEntityRenderer::new);
-		EntityRendererRegistry.register(ModEntity.GOBLIN_ENTITY, GoblinEntityRenderer::new);
+		EntityRendererRegistry.register(ModEntities.GOBLIN_ENTITY, GoblinEntityRenderer::new);
 
 		//注册Screen
 		ScreenRegistry.register(ModBlocks.UI_BLOCK_SCREEN_HANDLER, UIBlockScreen::new);
