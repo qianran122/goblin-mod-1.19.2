@@ -8,7 +8,9 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SpecialCraftingRecipe;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
+import top.qianran.items.CopyItem;
 import top.qianran.util.ModItems;
 import top.qianran.util.ModRecipes;
 
@@ -19,6 +21,7 @@ public class CopyRecipe extends SpecialCraftingRecipe {
 
     private int copyItemSlot;
     private int itemSlot;
+    private int copies;
 
     /*@Override
     public boolean matches(CraftingInventory inventory, World world) {
@@ -50,7 +53,7 @@ public class CopyRecipe extends SpecialCraftingRecipe {
         for (int i = 0; i < inventory.size(); ++i) {
             ItemStack stack = inventory.getStack(i);
             if(!stack.isEmpty()){
-                if(stack.getItem() == ModItems.COPY_ITEM){
+                if(stack.getItem() == ModItems.COPY_ITEM && stack.getCount() == 1){
                     if(stack.hasNbt()){
                         assert stack.getNbt() != null;
                         if(stack.getNbt().get("amount") != null){
@@ -118,13 +121,14 @@ public class CopyRecipe extends SpecialCraftingRecipe {
                 if(stack.getItem() == Items.DIAMOND || stack.getItem() == Items.DIAMOND_BLOCK){
                     return ItemStack.EMPTY;
                 }
-                if(stack.getItem() == ModItems.COPY_ITEM){
+                if(stack.getItem() == ModItems.COPY_ITEM && stack.getCount() == 1){
                     if(stack.hasNbt()){
                         assert stack.getNbt() != null;
                         if(stack.getNbt().get("amount") != null) {
                             count++;
                             copyItemCount++;
                             copyItemSlot = i;
+                            copies = stack.getNbt().getInt("amount");
                         }
                     }
                 } else {
@@ -136,16 +140,12 @@ public class CopyRecipe extends SpecialCraftingRecipe {
         if(count == 2 && copyItemCount ==1){
             ItemStack stack = inventory.getStack(itemSlot);
             Item item = stack.getItem();
-            ItemStack stackCopy = inventory.getStack(copyItemSlot);
-            assert  stackCopy.getNbt() != null;
-            int amount = stackCopy.getNbt().getInt("amount");
+            ItemStack newStack = new ItemStack(item, 2);
             if(stack.hasNbt()){
                 NbtCompound nbt = stack.getNbt();
-                ItemStack newStack = new ItemStack(item, amount+1);
                 newStack.setNbt(nbt);
-                return newStack;
             }
-            return new ItemStack(item, amount+1);
+            return newStack;
         }
         return ItemStack.EMPTY;
     }
@@ -158,5 +158,15 @@ public class CopyRecipe extends SpecialCraftingRecipe {
     @Override
     public RecipeSerializer<?> getSerializer() {
         return ModRecipes.COPY_RECIPE;
+    }
+
+    @Override
+    public DefaultedList<ItemStack> getRemainder(CraftingInventory inventory) {
+        if(copies > 1){
+            ItemStack stack = new ItemStack(ModItems.COPY_ITEM, 2);
+            stack.setNbt(CopyItem.newCopyItemNbt(copies - 1));
+            inventory.setStack(copyItemSlot, stack);
+        }
+        return super.getRemainder(inventory);
     }
 }

@@ -32,7 +32,11 @@ public class SilkBagItem extends Item {
                     String id = nbt.getString("id");
                     int count = nbt.getInt("count");
                     Item item = Registry.ITEM.getOrEmpty(new Identifier(id)).orElseThrow( ()-> new JsonSyntaxException("No such item " + id));
-                    user.giveItemStack(new ItemStack(item,count));
+                    ItemStack newStack = new ItemStack(item, count);
+                    if(nbt.get("itemNbt") != null ){
+                        newStack.setNbt((NbtCompound) nbt.get("itemNbt"));
+                    }
+                    user.giveItemStack(newStack);
                 }
             user.getMainHandStack().decrement(1);
             }
