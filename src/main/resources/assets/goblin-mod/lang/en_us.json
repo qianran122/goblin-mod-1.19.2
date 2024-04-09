@@ -4,6 +4,8 @@
   "itemGroup.goblin-mod.goblin_item": "Goblin Items",
   "item.goblin-mod.red_diamond.tooltip": "explosion",
   "item.goblin-mod.goblin_meat": "goblin meat",
+  "item.goblin-mod.goblin_ingot": "goblin ingot",
+
 
   "item.goblin-mod.goblin_sword": "goblin sword",
   "item.goblin-mod.goblin_pickaxe": "goblin pickaxe",
@@ -25,6 +27,8 @@
   "block.goblin-mod.mysterious_wood": "mysterious wood",
   "block.goblin-mod.mysterious_log_stripped": "stripped mysterious log",
   "block.goblin-mod.mysterious_wood_stripped": "stripped mysterious wood",
-  "block.goblin-mod.mysterious_planks": "mysterious planks"
+  "block.goblin-mod.mysterious_planks": "mysterious planks",
+
+  "block.goblin-mod.fermentation_vessels_block": "fermentation vessels"
 
 }

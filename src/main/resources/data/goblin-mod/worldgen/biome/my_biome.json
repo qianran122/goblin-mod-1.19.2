@@ -1,0 +1,33 @@
+{
+  "temperature": 10,
+  "downfall": 0.4,
+  "precipitation": "rain",
+  "temperature_modifier": "frozen",
+  "effects": {
+    "sky_color": 16262309,
+    "fog_color": 16733210,
+    "water_color": 12421327,
+    "water_fog_color": 12948342,
+    "grass_color": 669434,
+    "foliage_color": 4002928
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "minecraft:bat",
+        "weight": 1,
+        "minCount": 10,
+        "maxCount": 15
+      },
+      {
+        "type": "minecraft:horse",
+        "weight": 1,
+        "minCount": 10,
+        "maxCount": 15
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": []
+}

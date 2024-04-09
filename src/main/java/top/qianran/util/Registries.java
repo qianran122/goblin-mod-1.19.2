@@ -7,8 +7,6 @@ import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
-import top.qianran.blocks.ModSaplingBlock;
-import top.qianran.entity.ModEntity;
 import top.qianran.entity.custom.*;
 
 public class Registries {
@@ -18,7 +16,6 @@ public class Registries {
                     new Identifier("goblin-mod","goblin_item"))
             .icon(() -> new ItemStack(ModItems.GOBLIN_MEAT))
             .appendItems(stacks -> {
-                stacks.add(new ItemStack(ModItems.JB_ITEM));
                 stacks.add(new ItemStack(ModItems.GOBLIN_MEAT));
                 stacks.add(new ItemStack(ModItems.GOBLIN_INGOT));
                 //神秘木系列
@@ -54,9 +51,7 @@ public class Registries {
 
     //为实体注册属性
     private static void registerAttributes(){
-        FabricDefaultAttributeRegistry.register(ModEntity.SHIT_ENTITY, ShitEntity.setAttributes());
-        FabricDefaultAttributeRegistry.register(ModEntity.SHITA_ENTITY, ShitAEntity.setAttributes());
-        FabricDefaultAttributeRegistry.register(ModEntity.GOBLIN_ENTITY, GoblinEntity.setAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.GOBLIN_ENTITY, GoblinEntity.setAttributes());
     }
 
     //将方块注册为可剥皮

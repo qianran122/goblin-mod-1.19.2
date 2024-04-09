@@ -1,10 +1,10 @@
 package top.qianran;
 
-import io.netty.channel.epoll.EpollServerDomainSocketChannel;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -17,20 +17,14 @@ import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.*;
-import net.minecraft.loot.LootPool;
-import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
-import net.minecraft.recipe.RecipeSerializer;
-import net.minecraft.recipe.SpecialRecipeSerializer;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import software.bernie.geckolib3.GeckoLib;
-import top.qianran.entity.ModEntity;
+import top.qianran.util.ModEntities;
 import top.qianran.entity.custom.CubeEntity;
-import top.qianran.recipes.CopyItemRecipe;
 import top.qianran.util.*;
 import top.qianran.world.feature.ModConfiguredFeatures;
 import top.qianran.world.gen.ModWorldGen;
@@ -47,8 +41,6 @@ public class GoblinMod implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("goblin-mod");
 
 
-
-	public static final Item EXAMPLE_ITEM = new Item(new Item.Settings());
 
 	public static final VerticalSlabBlock POLISHED_ANDESITE_VERTICAL_SLAB = Registry.register(
 			Registry.BLOCK,
@@ -96,7 +88,7 @@ public class GoblinMod implements ModInitializer {
 	/*
 	 * 使用“goblin-mod:cube”作为ID注册我们的实体
 	 *
-	 * 这个实体注册在了 SpawnGroup#CREATURE 类别下，大多数的动物和友好或中立的生物都注册在这个类别下。
+//	 * 这个实体注册在了 SpawnGroup#CREATURE 类别下，大多数的动物和友好或中立的生物都注册在这个类别下。
 	 * 它有一个 0.75 × 0.75（或12个像素宽，即一个方块的3/4）大小的碰撞体积。
 	 */
 	public static final EntityType<CubeEntity> CUBE = Registry.register(
@@ -109,18 +101,15 @@ public class GoblinMod implements ModInitializer {
 	public static final Item CUBE_SPAWN_EGG = new SpawnEggItem(CUBE, 0xc4c4c4, 0xadadad, new FabricItemSettings());
 
 	//战利品表
-	//private static final Identifier GOBLIN_ENTITY_LOOT_TABLE_ID = ModEntity.GOBLIN_ENTITY.getLootTableId();
-
-	//nbt
-
+	//private static final Identifier GOBLIN_ENTITY_LOOT_TABLE_ID = ModEntities.GOBLIN_ENTITY.getLootTableId();
 
 	@Override
 	public void onInitialize() {
 		ModConfiguredFeatures.register();
 		ModWorldGen.gen();
+		ModEntities.putEntityToBiomes();
 
-
-/*
+		/*
 		LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, table, setter) -> {
 			if (GOBLIN_ENTITY_LOOT_TABLE_ID.equals(id)) {
 				LootPool.Builder poolBuilder = LootPool.builder()
@@ -137,7 +126,6 @@ public class GoblinMod implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
-		Registry.register(Registry.ITEM, new Identifier("goblin-mod", "example_item"), EXAMPLE_ITEM);
 		Registry.register(Registry.ITEM, new Identifier("goblin-mod", "polished_andesite_vertical_slab"),
 				new BlockItem(POLISHED_ANDESITE_VERTICAL_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
 
