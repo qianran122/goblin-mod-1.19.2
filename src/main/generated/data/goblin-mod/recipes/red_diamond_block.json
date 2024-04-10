@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "r": {
+      "item": "goblin-mod:red_diamond"
+    }
+  },
+  "pattern": [
+    "rrr",
+    "rrr",
+    "rrr"
+  ],
+  "result": {
+    "item": "goblin-mod:red_diamond_block"
+  }
+}

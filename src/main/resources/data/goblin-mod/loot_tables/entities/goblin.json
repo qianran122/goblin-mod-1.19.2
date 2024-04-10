@@ -6,7 +6,48 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "goblin-mod:goblin_meat"
+          "name": "goblin-mod:goblin_meat",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1.0,
+                "max": 3.0
+              }
+            }
+          ],
+          "weight": 10,
+          "quality": 0
+        },
+        {
+          "type": "minecraft:item",
+          "name": "goblin-mod:goblin_leather",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 0.0,
+                "max": 3.0
+              }
+            }
+          ],
+          "weight": 5,
+          "quality": 0
+        },
+        {
+          "type": "minecraft:item",
+          "name": "goblin-mod:goblin_sinews",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 0.0,
+                "max": 1.0
+              }
+            }
+          ],
+          "weight": 2,
+          "quality": 0
         }
       ],
       "conditions": [

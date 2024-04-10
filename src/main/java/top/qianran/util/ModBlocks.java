@@ -34,19 +34,6 @@ public class ModBlocks {
     public static void block(){
     }
 
-    public static final Block MYSTERIOUS_LOG = ModBlocks.registerBlock("mysterious_log", new PillarBlock(AbstractBlock.Settings.of(Material.WOOD).strength(4f)));
-    public static final Block MYSTERIOUS_WOOD = ModBlocks.registerBlock("mysterious_wood", new PillarBlock(AbstractBlock.Settings.of(Material.WOOD).strength(4f)));
-    public static final Block MYSTERIOUS_LOG_STRIPPED = ModBlocks.registerBlock("mysterious_log_stripped", new PillarBlock(AbstractBlock.Settings.of(Material.WOOD).strength(4f)));
-    public static final Block MYSTERIOUS_WOOD_STRIPPED = ModBlocks.registerBlock("mysterious_wood_stripped", new PillarBlock(AbstractBlock.Settings.of(Material.WOOD).strength(4f)));
-    public static final Block MYSTERIOUS_PLANKS = ModBlocks.registerBlock("mysterious_planks", new PillarBlock(AbstractBlock.Settings.of(Material.WOOD).strength(4f)));
-    public static final Block MYSTERIOUS_LEAVES = ModBlocks.registerBlock("mysterious_leaves", new Block(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
-    public static final Block MYSTERIOUS_SAPLING = ModBlocks.registerBlock("mysterious_sapling", new SaplingBlock(new ModMysteriousSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)));
-    //炖菜buff
-    public static final Block MYSTERIOUS_FLOWER = ModBlocks.registerBlock("mysterious_flower", new FlowerBlock(StatusEffects.STRENGTH, 20, FabricBlockSettings.copy(Blocks.ORANGE_TULIP)));
-
-    public static final Block RED_DIAMOND_BLOCK = ModBlocks.registerBlock("red_diamond_block",new Block(AbstractBlock.Settings.of(Material.STONE).strength(2.0f).requiresTool()));
-    public static final Block RED_DIAMOND_ORE = ModBlocks.registerBlock("red_diamond_ore",new OreBlock(FabricBlockSettings.copy(Blocks.IRON_ORE), UniformIntProvider.create(5, 10)));//经验球掉落的值的范围
-    public static final Block RED_DIAMOND_ORE_DEEPSLATE = ModBlocks.registerBlock("red_diamond_ore_deepslate",new OreBlock(FabricBlockSettings.copy(Blocks.DEEPSLATE_DIAMOND_ORE), UniformIntProvider.create(5, 10)));//经验球掉落的值的范围
     public static final Block TEST_BOX_BLOCK = ModBlocks.registerBlock("test_box_block",new TextBoxBlock(FabricBlockSettings.of(Material.STONE)));
     public static final Block CHANGE_BLOCK = ModBlocks.registerBlock("change_block", new ChangeBlock(FabricBlockSettings.of(Material.STONE)));
     public static final Block NUMBER_BLOCK = ModBlocks.registerBlock("number_block", new NumberBlock(FabricBlockSettings.of(Material.STONE).nonOpaque()));
@@ -66,13 +53,7 @@ public class ModBlocks {
         UI_BLOCK_SCREEN_HANDLER = ScreenHandlerRegistry.registerSimple(new Identifier("goblin-mod", "ui_block"), UIBlockScreenHandler::new);
     }
 
-    public static final Block FERMENTATION_VESSELS_BLOCK = ModBlocks.registerBlock("fermentation_vessels_block", new fermentationVesselsBlock(FabricBlockSettings.of(Material.STONE)));
-    public static BlockEntityType<fermentationVesselsBlockEntity> FERMENTATION_VESSELS_BLOCK_ENTITY =
-            ModBlocks.registerBlockEntity("fermentation_vessels_block_entity", FabricBlockEntityTypeBuilder.create(fermentationVesselsBlockEntity::new, FERMENTATION_VESSELS_BLOCK).build(null));
-    public static final ScreenHandlerType<fermentationVesselsBlockScreenHandler> FERMENTATION_VESSELS_BLOCK_SCREEN_HANDLER;
-    static {
-        FERMENTATION_VESSELS_BLOCK_SCREEN_HANDLER = ScreenHandlerRegistry.registerSimple(new Identifier("goblin-mod","fermentation_vessels_block"), fermentationVesselsBlockScreenHandler::new);
-    }
+
     //
     public static final Block EXAMPLE_RECIPES_BLOCK = ModBlocks.registerBlock("example_recipes_block", new ExampleRecipesBlock(FabricBlockSettings.of(Material.STONE)));
     //注册方块和对应的物品

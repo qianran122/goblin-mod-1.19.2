@@ -10,6 +10,7 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableTextContent;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
 import org.jetbrains.annotations.Nullable;
@@ -21,16 +22,20 @@ import java.util.List;
 public class
 RedDiamond extends Item {
 
-
-
     public RedDiamond(Settings settings) {
         super(settings);
     }
+
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if(hand == Hand.MAIN_HAND){
-            user.playSound(BlockSoundGroup.ANVIL.getPlaceSound(), 1.0F, 1.0F);
-            user.setHealth(5.0f);
-            world.createExplosion(user, user.getX(), user.getY(), user.getZ(), 10.0f, true, Explosion.DestructionType.DESTROY);
+            /*Vec3d viewVector = user.getRotationVec(1.0F);
+            String X = String.format("%.2f", viewVector.x);
+            String Y = String.format("%.2f", viewVector.y);
+            String Z = String.format("%.2f", viewVector.z);
+            user.sendMessage(Text.of("View Vector: " + X + " " + Y + " " + Z), false);*/
+            //user.playSound(BlockSoundGroup.ANVIL.getPlaceSound(), 1.0F, 1.0F);
+            //user.setHealth(5.0f);
+            //world.createExplosion(user, user.getX(), user.getY(), user.getZ(), 10.0f, true, Explosion.DestructionType.DESTROY);
         }
         return TypedActionResult.pass(user.getStackInHand(hand));
     }

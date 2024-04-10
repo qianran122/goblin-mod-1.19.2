@@ -21,16 +21,18 @@ public class GoblinSword extends SwordItem {
         return true;
     }*/
 
+    //覆盖父类方法，当玩家挖掘方块时触发
     @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
-        ((PlayerEntity) miner).giveItemStack(Items.DIAMOND.getDefaultStack());
+        //((PlayerEntity) miner).giveItemStack(Items.DIAMOND.getDefaultStack());
         return super.postMine(stack, world, state, pos, miner);
     }
 
+    //覆盖父类方法，当玩家攻击实体时触发
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        World world = attacker.getWorld();//获取攻击者所在世界
-        world.createExplosion(attacker, target.getX(), target.getY(), target.getZ(), 3.0f, Explosion.DestructionType.DESTROY);
+        //World world = attacker.getWorld();//获取攻击者所在世界
+        //world.createExplosion(attacker, target.getX(), target.getY(), target.getZ(), 3.0f, Explosion.DestructionType.DESTROY);
         return super.postHit(stack, target, attacker);
     }
 }

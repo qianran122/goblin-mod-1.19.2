@@ -5,7 +5,7 @@ import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import top.qianran.util.ModItems;
+import top.qianran.items.group.GoblinGroupThings;
 
 public class GoblinArmorMaterial implements ArmorMaterial {
 
@@ -38,7 +38,7 @@ public class GoblinArmorMaterial implements ArmorMaterial {
     //修复材料
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(ModItems.GOBLIN_MEAT);
+        return Ingredient.ofItems(GoblinGroupThings.GOBLIN_MEAT);
     }
 
     @Override

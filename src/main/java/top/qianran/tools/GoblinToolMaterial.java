@@ -2,19 +2,19 @@ package top.qianran.tools;
 
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
-import top.qianran.util.ModItems;
-
+import top.qianran.items.group.GoblinGroupThings;
+//原版数据参阅ToolMaterials类
 public class GoblinToolMaterial implements ToolMaterial {
     //耐久
     @Override
     public int getDurability() {
-        return 1000;
+        return 156;
     }
 
     //挖掘速度
     @Override
     public float getMiningSpeedMultiplier() {
-        return 10;
+        return 10.5f;
     }
 
     //攻击伤害
@@ -32,12 +32,12 @@ public class GoblinToolMaterial implements ToolMaterial {
     //获取优秀附魔的概率
     @Override
     public int getEnchantability() {
-        return 10;
+        return 15;
     }
 
     //修复材料
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(ModItems.GOBLIN_MEAT);
+        return Ingredient.ofItems(GoblinGroupThings.GOBLIN_INGOT);
     }
 }

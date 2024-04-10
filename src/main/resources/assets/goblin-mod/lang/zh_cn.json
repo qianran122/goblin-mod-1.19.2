@@ -1,9 +1,17 @@
 {
+  "Empty": "空",
+
+  "item.goblin-mod.goblin_axe.tooltip": "自带连锁与更少的耐久损失",
+
   "entity.goblin-mod.goblin": "哥布林",
   "item.goblin-mod.goblin_spawn_egg": "哥布林生成蛋",
   "itemGroup.goblin-mod.goblin_item": "哥布林物品",
   "item.goblin-mod.red_diamond.tooltip": "可以爆炸",
+
   "item.goblin-mod.goblin_meat": "哥布林肉",
+  "item.goblin-mod.goblin_sinews": "哥布林筋",
+  "item.goblin-mod.goblin_leather": "哥布林皮",
+  "item.goblin-mod.goblin_leather_bag": "哥布林袋子",
   "item.goblin-mod.goblin_ingot": "哥布林腐蚀锭",
 
   "item.goblin-mod.goblin_sword": "哥布林剑",
@@ -21,8 +29,7 @@
   "block.goblin-mod.red_diamond_ore": "红宝石矿石",
   "block.goblin-mod.red_diamond_ore_deepslate": "深层红宝石矿石",
 
-
-
+  "block.goblin-mod.mysterious_leaves": "神秘原木树叶",
   "block.goblin-mod.mysterious_log": "神秘原木",
   "block.goblin-mod.mysterious_wood": "神秘木",
   "block.goblin-mod.mysterious_log_stripped": "去皮神秘原木",
