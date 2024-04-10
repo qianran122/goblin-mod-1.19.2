@@ -26,11 +26,7 @@ public class TestGroup {
 
 
                 stacks.add(new ItemStack(GoblinMod.POLISHED_ANDESITE_VERTICAL_SLAB));
-                stacks.add(new ItemStack(ModItems.RED_DIAMOND));
                 //方块
-                stacks.add(new ItemStack(ModBlocks.RED_DIAMOND_BLOCK));
-                stacks.add(new ItemStack(ModBlocks.RED_DIAMOND_ORE));
-                stacks.add(new ItemStack(ModBlocks.RED_DIAMOND_ORE_DEEPSLATE));
                 stacks.add(new ItemStack(ModBlocks.TEST_BOX_BLOCK));
                 stacks.add(new ItemStack(ModBlocks.CHANGE_BLOCK));
                 stacks.add(new ItemStack(ModBlocks.NUMBER_BLOCK));
@@ -40,7 +36,6 @@ public class TestGroup {
                 stacks.add(new ItemStack(ModBlocks.CONTAINER_BLOCK));
                 stacks.add(new ItemStack(ModBlocks.NEW_BOX_BLOCK));
                 stacks.add(new ItemStack(ModBlocks.UI_BLOCK));
-                stacks.add(new ItemStack(ModBlocks.FERMENTATION_VESSELS_BLOCK));
             })
             .build();
 

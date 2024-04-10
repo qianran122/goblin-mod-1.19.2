@@ -10,11 +10,8 @@ import net.minecraft.item.Items;
 import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
-import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.screen.slot.Slot;
-import org.jetbrains.annotations.Nullable;
-import top.qianran.util.ModBlocks;
-import top.qianran.util.ModItems;
+import top.qianran.items.group.GoblinGroupThings;
 
 public class fermentationVesselsBlockScreenHandler extends ScreenHandler {
     public Inventory inventory;
@@ -33,20 +30,20 @@ public class fermentationVesselsBlockScreenHandler extends ScreenHandler {
     }
     //绘制槽位位置
     public fermentationVesselsBlockScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
-        super(ModBlocks.FERMENTATION_VESSELS_BLOCK_SCREEN_HANDLER, syncId);
+        super(GoblinGroupThings.FERMENTATION_VESSELS_BLOCK_SCREEN_HANDLER, syncId);
         this.inventory = inventory;
         this.propertyDelegate = propertyDelegate;
         this.addProperties(propertyDelegate);
         checkSize(inventory, 3);
         checkDataCount(propertyDelegate, 1);
-        setSlot(0, 62, 6, ModItems.GOBLIN_MEAT);
-        setSlot(1, 85, 11, ModItems.GOBLIN_MEAT);
-        setSlot(2, 90, 34, ModItems.GOBLIN_MEAT);
-        setSlot(3, 85, 57, ModItems.GOBLIN_MEAT);
-        setSlot(4, 62, 62, ModItems.GOBLIN_MEAT);
-        setSlot(5, 39, 57, ModItems.GOBLIN_MEAT);
-        setSlot(6, 35, 34, ModItems.GOBLIN_MEAT);
-        setSlot(7, 39, 11, ModItems.GOBLIN_MEAT);
+        setSlot(0, 62, 6, GoblinGroupThings.GOBLIN_MEAT);
+        setSlot(1, 85, 11, GoblinGroupThings.GOBLIN_MEAT);
+        setSlot(2, 90, 34, GoblinGroupThings.GOBLIN_MEAT);
+        setSlot(3, 85, 57, GoblinGroupThings.GOBLIN_MEAT);
+        setSlot(4, 62, 62, GoblinGroupThings.GOBLIN_MEAT);
+        setSlot(5, 39, 57, GoblinGroupThings.GOBLIN_MEAT);
+        setSlot(6, 35, 34, GoblinGroupThings.GOBLIN_MEAT);
+        setSlot(7, 39, 11, GoblinGroupThings.GOBLIN_MEAT);
         setSlot(8, 62, 34, Items.IRON_INGOT);
         this.addSlot(new Slot(this.inventory, 9, 136, 35) {
             @Override

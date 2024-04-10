@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "p": {
+      "item": "goblin-mod:mysterious_planks"
+    }
+  },
+  "pattern": [
+    "pp",
+    "pp"
+  ],
+  "result": {
+    "item": "minecraft:crafting_table"
+  }
+}

@@ -16,8 +16,7 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import top.qianran.blocks.uiBlock.UIBlockEntity;
-import top.qianran.util.ModBlocks;
+import top.qianran.items.group.GoblinGroupThings;
 
 public class fermentationVesselsBlock extends BlockWithEntity {
     public fermentationVesselsBlock(Settings settings) {
@@ -73,6 +72,6 @@ public class fermentationVesselsBlock extends BlockWithEntity {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, ModBlocks.FERMENTATION_VESSELS_BLOCK_ENTITY, (world1, pos, state1, blockEntity) -> fermentationVesselsBlockEntity.tick(blockEntity));
+        return checkType(type, GoblinGroupThings.FERMENTATION_VESSELS_BLOCK_ENTITY, (world1, pos, state1, blockEntity) -> fermentationVesselsBlockEntity.tick(blockEntity));
     }
 }

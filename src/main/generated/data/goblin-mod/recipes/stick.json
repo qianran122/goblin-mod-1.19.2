@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "p": {
+      "item": "goblin-mod:mysterious_planks"
+    }
+  },
+  "pattern": [
+    "p",
+    "p"
+  ],
+  "result": {
+    "count": 4,
+    "item": "minecraft:stick"
+  }
+}

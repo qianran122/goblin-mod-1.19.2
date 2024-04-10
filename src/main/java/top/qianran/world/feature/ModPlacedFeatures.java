@@ -15,6 +15,11 @@ public class ModPlacedFeatures {
                     PlacedFeatures.createCountExtraModifier(1,0.1f, 2)
             ));
 
+    public static final RegistryEntry<PlacedFeature> MYSTERIOUS_FLOWER_PLACED = PlacedFeatures.register("mysterious_flower_placed",
+            ModConfiguredFeatures.MYSTERIOUS_FLOWER, RarityFilterPlacementModifier.of(4),//稀有度过滤器
+            SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of()//生物群系过滤器
+    );
+
     public static final RegistryEntry<PlacedFeature> RED_DIAMOND_ORE_UPPER_PLACED = PlacedFeatures.register("red_diamond_ore_upper_placed",
             ModConfiguredFeatures.RED_DIAMOND_ORE, ModOreFeatures.modifiersWithCount(90,  //矿石生成数量
                     HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.getTop())));//正态分布 0层~世界顶层
@@ -23,8 +28,4 @@ public class ModPlacedFeatures {
             ModConfiguredFeatures.RED_DIAMOND_ORE, ModOreFeatures.modifiersWithCount(10,  //矿石生成数量
                     HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0))));//正态分布 世界底层~0层
 
-    public static final RegistryEntry<PlacedFeature> MYSTERIOUS_FLOWER_PLACED = PlacedFeatures.register("mysterious_flower_placed",
-            ModConfiguredFeatures.MYSTERIOUS_FLOWER, RarityFilterPlacementModifier.of(4),//稀有度过滤器
-            SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of()//生物群系过滤器
-            );
 }

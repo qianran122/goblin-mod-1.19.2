@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "g": {
+      "item": "minecraft:iron_ingot"
+    },
+    "l": {
+      "item": "goblin-mod:mysterious_leaves"
+    },
+    "s": {
+      "item": "minecraft:glass"
+    }
+  },
+  "pattern": [
+    "glg",
+    "gsg",
+    "ggg"
+  ],
+  "result": {
+    "item": "goblin-mod:fermentation_vessels_block"
+  }
+}

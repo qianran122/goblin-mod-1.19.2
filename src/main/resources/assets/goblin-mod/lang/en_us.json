@@ -1,11 +1,18 @@
 {
+  "Empty": "Empty",
+
+  "item.goblin-mod.goblin_axe.tooltip": "Less durability loss when chained",
+
   "entity.goblin-mod.goblin": "goblin",
   "item.goblin-mod.goblin_spawn_egg": "goblin spawn egg",
   "itemGroup.goblin-mod.goblin_item": "Goblin Items",
   "item.goblin-mod.red_diamond.tooltip": "explosion",
-  "item.goblin-mod.goblin_meat": "goblin meat",
-  "item.goblin-mod.goblin_ingot": "goblin ingot",
 
+  "item.goblin-mod.goblin_meat": "goblin meat",
+  "item.goblin-mod.goblin_sinews": "goblin sinews",
+  "item.goblin-mod.goblin_leather": "goblin leather",
+  "item.goblin-mod.goblin_leather_bag": "goblin leather bag",
+  "item.goblin-mod.goblin_ingot": "goblin ingot",
 
   "item.goblin-mod.goblin_sword": "goblin sword",
   "item.goblin-mod.goblin_pickaxe": "goblin pickaxe",
@@ -23,6 +30,7 @@
   "block.goblin-mod.red_diamond_ore": "red diamond ore",
   "block.goblin-mod.red_diamond_ore_deepslate": "deepslate red diamond ore",
 
+  "block.goblin-mod.mysterious_leaves": "mysterious leaves",
   "block.goblin-mod.mysterious_log": "mysterious log",
   "block.goblin-mod.mysterious_wood": "mysterious wood",
   "block.goblin-mod.mysterious_log_stripped": "stripped mysterious log",

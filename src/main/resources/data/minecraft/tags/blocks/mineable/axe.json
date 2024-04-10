@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "goblin-mod:mysterious_log",
+    "goblin-mod:mysterious_log_stripped",
+    "goblin-mod:mysterious_wood",
+    "goblin-mod:mysterious_wood_stripped",
+    "goblin-mod:mysterious_planks"
+  ]
+}
