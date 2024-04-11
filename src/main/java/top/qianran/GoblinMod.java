@@ -133,7 +133,7 @@ public class GoblinMod implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("goblin-mod","demo_block"),
 				new BlockItem(DEMO_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
 
-
+		//
 		/*
 		 * 注册我们方块实体的默认属性。
 		 * 属性是一个生物当前状态的数值，其中有攻击伤害和生命值等。
