@@ -148,7 +148,7 @@ public class GoblinMod implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("goblin-mod", "cube_spawn_egg"), CUBE_SPAWN_EGG);
 
 		//加载测试物品组
-		TestGroup.init();
+		//TestGroup.init();
 		//注册
 		Registries.init();
 		GeckoLib.initialize();

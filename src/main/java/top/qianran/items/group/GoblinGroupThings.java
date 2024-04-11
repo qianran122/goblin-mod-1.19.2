@@ -42,11 +42,6 @@ class GoblinGroup{
                 stacks.add(new ItemStack(GoblinGroupThings.MYSTERIOUS_LEAVES));
                 stacks.add(new ItemStack(GoblinGroupThings.MYSTERIOUS_SAPLING));
                 stacks.add(new ItemStack(GoblinGroupThings.MYSTERIOUS_FLOWER));
-                //红宝石系列
-                stacks.add(new ItemStack(GoblinGroupThings.RED_DIAMOND));
-                stacks.add(new ItemStack(GoblinGroupThings.RED_DIAMOND_BLOCK));
-                stacks.add(new ItemStack(GoblinGroupThings.RED_DIAMOND_ORE));
-                stacks.add(new ItemStack(GoblinGroupThings.RED_DIAMOND_ORE_DEEPSLATE));
                 //发酵器
                 stacks.add(new ItemStack(GoblinGroupThings.FERMENTATION_VESSELS_BLOCK));
                 //哥布林

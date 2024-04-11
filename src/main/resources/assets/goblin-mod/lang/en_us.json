@@ -2,6 +2,7 @@
   "Empty": "Empty",
 
   "item.goblin-mod.goblin_axe.tooltip": "Less durability loss when chained",
+  "item.goblin-mod.goblin_pickaxe.tooltip": "Scoping excavation (3x3)",
 
   "entity.goblin-mod.goblin": "goblin",
   "item.goblin-mod.goblin_spawn_egg": "goblin spawn egg",
@@ -30,6 +31,8 @@
   "block.goblin-mod.red_diamond_ore": "red diamond ore",
   "block.goblin-mod.red_diamond_ore_deepslate": "deepslate red diamond ore",
 
+  "block.goblin-mod.mysterious_flower": "mysterious flower",
+  "block.goblin-mod.mysterious_sapling": "mysterious sapling",
   "block.goblin-mod.mysterious_leaves": "mysterious leaves",
   "block.goblin-mod.mysterious_log": "mysterious log",
   "block.goblin-mod.mysterious_wood": "mysterious wood",

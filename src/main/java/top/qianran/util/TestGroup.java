@@ -5,6 +5,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import top.qianran.GoblinMod;
+import top.qianran.items.group.GoblinGroupThings;
 
 public class TestGroup {
     //测试物品组
@@ -24,6 +25,11 @@ public class TestGroup {
                 stacks.add(new ItemStack(ModItems.COPY_ITEM));
                 stacks.add(new ItemStack(ModItems.FINISH_BOOK));
 
+                //红宝石系列
+                stacks.add(new ItemStack(GoblinGroupThings.RED_DIAMOND));
+                stacks.add(new ItemStack(GoblinGroupThings.RED_DIAMOND_BLOCK));
+                stacks.add(new ItemStack(GoblinGroupThings.RED_DIAMOND_ORE));
+                stacks.add(new ItemStack(GoblinGroupThings.RED_DIAMOND_ORE_DEEPSLATE));
 
                 stacks.add(new ItemStack(GoblinMod.POLISHED_ANDESITE_VERTICAL_SLAB));
                 //方块
