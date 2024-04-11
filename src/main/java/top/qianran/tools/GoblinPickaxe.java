@@ -2,6 +2,7 @@ package top.qianran.tools;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -16,10 +17,18 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class GoblinPickaxe extends PickaxeItem {
     public GoblinPickaxe(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
+    }
+
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        super.appendTooltip(stack, world, tooltip, context);
+        tooltip.add(Text.translatable("item.goblin-mod.goblin_pickaxe.tooltip"));
     }
 
     @Override

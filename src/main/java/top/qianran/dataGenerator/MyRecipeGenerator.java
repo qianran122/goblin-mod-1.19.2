@@ -29,18 +29,18 @@ public class MyRecipeGenerator extends FabricRecipeProvider {
     private static void BLOCKS(Consumer<RecipeJsonProvider> exporter){
         //发酵器
         ShapedRecipeJsonBuilder.create(GoblinGroupThings.FERMENTATION_VESSELS_BLOCK, 1)
-                .pattern("glg")
-                .pattern("gsg")
-                .pattern("ggg")
+                .pattern("mlm")
+                .pattern("msm")
+                .pattern("mmm")
                 .input('l', GoblinGroupThings.MYSTERIOUS_LEAVES)
-                .input('g', Items.IRON_INGOT)
-                .input('s', Items.GLASS)
+                .input('m', GoblinGroupThings.MYSTERIOUS_LOG)
+                .input('g', GoblinGroupThings.GOBLIN_LEATHER)
                 .criterion(FabricRecipeProvider.hasItem(GoblinGroupThings.MYSTERIOUS_LEAVES),
                         FabricRecipeProvider.conditionsFromItem(GoblinGroupThings.MYSTERIOUS_LEAVES))
-                .criterion(FabricRecipeProvider.hasItem(Items.IRON_INGOT),
-                        FabricRecipeProvider.conditionsFromItem(Items.IRON_INGOT))
-                .criterion(FabricRecipeProvider.hasItem(Items.GLASS),
-                        FabricRecipeProvider.conditionsFromItem(Items.GLASS))
+                .criterion(FabricRecipeProvider.hasItem(GoblinGroupThings.MYSTERIOUS_LOG),
+                        FabricRecipeProvider.conditionsFromItem(GoblinGroupThings.MYSTERIOUS_LOG))
+                .criterion(FabricRecipeProvider.hasItem(GoblinGroupThings.GOBLIN_LEATHER),
+                        FabricRecipeProvider.conditionsFromItem(GoblinGroupThings.GOBLIN_LEATHER))
                 .offerTo(exporter);
     }
 

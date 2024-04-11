@@ -2,6 +2,8 @@
   "Empty": "空",
 
   "item.goblin-mod.goblin_axe.tooltip": "自带连锁与更少的耐久损失",
+  "item.goblin-mod.goblin_pickaxe.tooltip": "范围性挖掘 (3x3)",
+
 
   "entity.goblin-mod.goblin": "哥布林",
   "item.goblin-mod.goblin_spawn_egg": "哥布林生成蛋",
@@ -29,6 +31,8 @@
   "block.goblin-mod.red_diamond_ore": "红宝石矿石",
   "block.goblin-mod.red_diamond_ore_deepslate": "深层红宝石矿石",
 
+  "block.goblin-mod.mysterious_flower": "神秘花",
+  "block.goblin-mod.mysterious_sapling": "神秘树苗",
   "block.goblin-mod.mysterious_leaves": "神秘原木树叶",
   "block.goblin-mod.mysterious_log": "神秘原木",
   "block.goblin-mod.mysterious_wood": "神秘木",

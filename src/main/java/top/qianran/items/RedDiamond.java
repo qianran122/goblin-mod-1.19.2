@@ -1,6 +1,8 @@
 package top.qianran.items;
 
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.attribute.EntityAttribute;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -44,6 +46,6 @@ RedDiamond extends Item {
     //物品提示
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("item.goblin-mod.red_diamond.tooltip"));
+        //tooltip.add(Text.translatable("item.goblin-mod.red_diamond.tooltip"));
     }
 }

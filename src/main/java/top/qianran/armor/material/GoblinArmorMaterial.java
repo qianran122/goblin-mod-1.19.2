@@ -49,12 +49,12 @@ public class GoblinArmorMaterial implements ArmorMaterial {
     //盔甲韧性
     @Override
     public float getToughness() {
-        return 1.2f;
+        return 0.5f;
     }
 
     //抗击退
     @Override
     public float getKnockbackResistance() {
-        return 1f;
+        return 0.1f;
     }
 }
