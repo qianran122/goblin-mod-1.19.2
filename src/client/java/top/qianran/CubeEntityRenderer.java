@@ -3,7 +3,7 @@ package top.qianran;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.util.Identifier;
-import top.qianran.entity.CubeEntity;
+import top.qianran.entity.custom.CubeEntity;
 
 /*
  * 一个用来提供模型、阴影大小和纹理的渲染器

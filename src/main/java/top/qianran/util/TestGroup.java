@@ -7,15 +7,17 @@ import net.minecraft.util.Identifier;
 import top.qianran.GoblinMod;
 import top.qianran.items.group.GoblinGroupThings;
 
+import static top.qianran.test.Test.*;
+
 public class TestGroup {
     //测试物品组
     public static final ItemGroup TEST_GROUP = FabricItemGroupBuilder.create(
                     new Identifier("goblin-mod","test_item"))
             .icon(() -> new ItemStack(ModItems.TEST1))
             .appendItems(stacks -> {
-                stacks.add(new ItemStack(GoblinMod.BOX_BLOCK));
-                stacks.add(new ItemStack(GoblinMod.DEMO_BLOCK));
-                stacks.add(new ItemStack(GoblinMod.CUBE_SPAWN_EGG));
+                stacks.add(new ItemStack(BOX_BLOCK));
+                stacks.add(new ItemStack(DEMO_BLOCK));
+                stacks.add(new ItemStack(CUBE_SPAWN_EGG));
 
                 stacks.add(new ItemStack(ModItems.TEST1));
                 stacks.add(new ItemStack(ModItems.TEST2));
@@ -31,7 +33,7 @@ public class TestGroup {
                 stacks.add(new ItemStack(GoblinGroupThings.RED_DIAMOND_ORE));
                 stacks.add(new ItemStack(GoblinGroupThings.RED_DIAMOND_ORE_DEEPSLATE));
 
-                stacks.add(new ItemStack(GoblinMod.POLISHED_ANDESITE_VERTICAL_SLAB));
+                stacks.add(new ItemStack(POLISHED_ANDESITE_VERTICAL_SLAB));
                 //方块
                 stacks.add(new ItemStack(ModBlocks.TEST_BOX_BLOCK));
                 stacks.add(new ItemStack(ModBlocks.CHANGE_BLOCK));

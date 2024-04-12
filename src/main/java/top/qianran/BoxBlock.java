@@ -15,7 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class BoxBlock extends BlockWithEntity {
-    protected BoxBlock(Settings settings) {
+    public BoxBlock(Settings settings) {
         super(settings);
     }
 

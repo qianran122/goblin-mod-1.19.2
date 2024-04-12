@@ -15,10 +15,11 @@ import net.minecraft.util.math.Direction;
 import org.jetbrains.annotations.Nullable;
 
 import static net.fabricmc.fabric.api.registry.VillagerPlantableRegistry.getItems;
+import static top.qianran.test.Test.DEMO_BLOCK_ENTITY;
 
 public class DemoBlockEntity extends BlockEntity implements ImplementedInventory, SidedInventory {
     public DemoBlockEntity(BlockPos pos, BlockState state){
-        super(GoblinMod.DEMO_BLOCK_ENTITY, pos, state);
+        super(DEMO_BLOCK_ENTITY, pos, state);
 
     }
 

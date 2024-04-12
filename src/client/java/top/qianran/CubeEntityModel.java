@@ -6,7 +6,7 @@ import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelPartNames;
 import net.minecraft.client.util.math.MatrixStack;
 import org.spongepowered.include.com.google.common.collect.ImmutableList;
-import top.qianran.entity.CubeEntity;
+import top.qianran.entity.custom.CubeEntity;
 
 public class CubeEntityModel extends EntityModel<CubeEntity> {
 

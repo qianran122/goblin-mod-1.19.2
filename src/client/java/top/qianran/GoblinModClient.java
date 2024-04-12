@@ -22,6 +22,9 @@ import top.qianran.items.group.GoblinGroupThings;
 import top.qianran.util.ModBlocks;
 import top.qianran.util.ModEntities;
 
+import static top.qianran.test.Test.BOX_SCREEN_HANDLER;
+import static top.qianran.test.Test.CUBE;
+
 @Environment(EnvType.CLIENT)
 public class GoblinModClient implements ClientModInitializer {
     public static final EntityModelLayer MODEL_CUBE_LAYER = new EntityModelLayer(new Identifier("goblin-mod", "cube"), "main");
@@ -30,7 +33,7 @@ public class GoblinModClient implements ClientModInitializer {
     public void onInitializeClient() {
 
         // This entrypoint is suitable for setting up client-specific logic, such as rendering.
-        ScreenRegistry.register(GoblinMod.BOX_SCREEN_HANDLER, BoxScreen::new);
+        ScreenRegistry.register(BOX_SCREEN_HANDLER, BoxScreen::new);
 
         /*
          * 方块实体渲染器的注册，提供模型、阴影大小和纹理的渲染器。
@@ -38,7 +41,7 @@ public class GoblinModClient implements ClientModInitializer {
          * 实体渲染器也可以在实体基于上下文进行渲染前(EndermanEntityRenderer#render). 操作模型。
          */
         // In 1.17, use EntityRendererRegistry.register (seen below) instead of EntityRendererRegistry.INSTANCE.register (seen above)
-        EntityRendererRegistry.register(GoblinMod.CUBE, (context) -> {
+        EntityRendererRegistry.register(CUBE, (context) -> {
             return new CubeEntityRenderer(context);
         });
 

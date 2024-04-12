@@ -10,6 +10,8 @@ import net.minecraft.screen.slot.Slot;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.network.PacketByteBuf;
 
+import static top.qianran.test.Test.BOX_SCREEN_HANDLER;
+
 public class BoxScreenHandler extends ScreenHandler {
 
     //我们保存从服务器获得的 blockPos 并为其提供一个 getter，以便 BoxScreen 可以读取该信息
@@ -27,7 +29,7 @@ public class BoxScreenHandler extends ScreenHandler {
     // 此构造函数从服务器上的 BlockEntity 调用，服务器知道容器的库存(你可以将它理解为物品栏)，
     // 因此可以直接将其作为参数提供。 然后，此库存(物品栏)将同步到客户端。
     public BoxScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
-        super(GoblinMod.BOX_SCREEN_HANDLER, syncId);
+        super(BOX_SCREEN_HANDLER, syncId);
         checkSize(inventory, 16);
         this.inventory = inventory;
         // 玩家开启时，一些物品栏有自定义的逻辑。

@@ -18,11 +18,13 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import org.jetbrains.annotations.Nullable;
 
+import static top.qianran.test.Test.BOX_BLOCK_ENTITY;
+
 public class BoxBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(16, ItemStack.EMPTY);
 
     public BoxBlockEntity(BlockPos pos, BlockState state) {
-        super(GoblinMod.BOX_BLOCK_ENTITY, pos, state);
+        super(BOX_BLOCK_ENTITY, pos, state);
     }
 
 

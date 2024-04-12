@@ -39,7 +39,7 @@ public class GoblinPickaxe extends PickaxeItem {
 
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
-        user.sendMessage(Text.literal("Goblin Pickaxe Stopped Using"));
+        //user.sendMessage(Text.literal("Goblin Pickaxe Stopped Using"));
         super.onStoppedUsing(stack, world, user, remainingUseTicks);
     }
 
@@ -94,14 +94,14 @@ public class GoblinPickaxe extends PickaxeItem {
     }
     private void tryBreakBlock(World world, BlockState state, BlockPos pos, LivingEntity miner){
         boolean b = false;
-        String blockName = world.getBlockState(pos).getBlock().getTranslationKey();
-        miner.sendMessage(Text.literal("Block name: " + blockName));
+        //String blockName = world.getBlockState(pos).getBlock().getTranslationKey();
+        //miner.sendMessage(Text.literal("Block name: " + blockName));
 
         Material material = world.getBlockState(pos).getMaterial();
-        miner.sendMessage(Text.literal("Block material: " + material.toString()));
+        //miner.sendMessage(Text.literal("Block material: " + material.toString()));
 
         float hardness = world.getBlockState(pos).getHardness(world, pos);
-        miner.sendMessage(Text.literal("Block hardness: " + hardness));
+        //miner.sendMessage(Text.literal("Block hardness: " + hardness));
         if(hardness > 0f && hardness <= 3f && material == Material.STONE){
             b = true;
         }
